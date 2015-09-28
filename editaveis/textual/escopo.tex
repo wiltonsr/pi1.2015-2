@@ -1,0 +1,55 @@
+\chapter[Escopo]{Escopo}
+
+\section{Objetivo do projeto}
+Criar um sistema anticolisão veicular que alerte o motorista sobre ultrapassagens potencialmente perigosas, contra veículos que estejam vindo em direção contrária.
+O sistema não terá autonomia sobre o veículo em questão, apenas terá a finalidade de alertar se a manobra será segura ou não.
+
+\section{Clientes Do Sistema}
+O sistema atenderá motoristas de veículos automotores, que seguem as normas do Código de Trânsito brasileiro e trafegam por rodovias brasileiras.
+
+\section{Onde o sistema Funcionará}
+Visto que no Brasil dos 188.925 acidentes em rodovias, 7.008 causaram mortes e 63.980 deixaram pessoas feridas em 2011, segundo o DNIT, o sistema visa o uso nas rodovias a fim de reduzir esses números. \cite{ministerio}
+
+\section{Condições de Operação}
+O sistema funcionará sob diversas condições, não sendo afetado por céu nublado ou chuva.
+O Transponder funciona sob quaisquer condições climáticas e em qualquer posição do  globo, o sensor MFC \cite{mfc} permite uso durante dia e noite e o GPS funciona sob qualquer circunstância
+
+\section{Velocidade Máxima}
+Foi definido, conforme o Código de Trânsito Brasileiro \cite{ctb}, que a velocidade máxima de operação do equipamento é de 110km/h.
+Esta velocidade será referência para cálculos futuros sobre Distância Máxima.
+
+\section{Distância de Visibilidade de Ultrapassagem}
+De acordo com a Norma de Traçado (JAE P3/94) é considerado que a distância  de ultrapassagem pode ser obtida empiricamente através da expressão:
+
+$DU = 7*VT$
+\begin{itemize}
+  \item DU - Distância de Ultrapassagem.
+  \item VT - Velocidade de Tráfego ( ou relativa )
+\end{itemize}
+
+Esse cálculo garante a 85\% dos condutores a Distância de Visibilidade, que é a distância mínima para que um motorista ultrapasse um outro veículo em segurança e sem forçá-lo a reduzir sua velocidade. \cite{costa}
+
+Os cálculos para tomada de decisão do sistema serão baseados, entre outros, nas seguintes características:
+
+\begin{itemize}
+  \item Velocidade do veículo que iniciou a ultrapassagem;
+  \item Velocidade do veículo a ser ultrapassado;
+  \item Velocidade do veículo que trafega no sentido contrário.
+\end{itemize}
+
+Outras relações de Velocidade e Distância estão na tabela abaixo:
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=330px, scale=0.5]{figuras/visibilidade}
+  \caption{Relação de velocidade e distância segura para ultrapassagem}
+  \label{fig:visibilidade}
+\end{figure}
+
+\section{Distância mínima até o veículo a frente}
+Utilizando os dados fornecidos na figura \ref{fig:visibilidade}, podemos definir a distância mínima de segurança, assumindo que o veículo esteja a uma velocidade máxima de 110km/h, de 264 metros. Esta distância tem como base a Distância de Visibilidade para Paragem (DP), acrescidos 20\% para margem de segurança.
+
+\section{Tempo de resposta dos aparelhos empregados no sistema}
+\begin{itemize}
+  \item Sensor MFC \cite{mfc} : < 10 ms.
+  \item Trânsponder VDL 4000/VTE: 3,0 ms.
+\end{itemize}
