@@ -85,35 +85,41 @@ Tocador de livros em áudio : Não
 
 
 \subsection{Justificativa da Escolha}
-% \begin{itemize}
-% 	\item weerwer
-%
-% \end{itemize}}
 
 O objetivo do presente projeto é desenvolver um sistema de emissão de alertas de colisão veicular em rodovias. Para identificar o veículo que está trafegando na mesma via em direção oposta e obter a sua distância e velocidade relativa para concluir se a ultrapassagem é segura e caso contrário informar o condutor do veículo, será utilizado o um sensor de longa distância que tem seu funcionamento baseado na emissão de um laser infravermelho que será refletido pelo outro veículo e lido pelo sensor.
-Segundo o Manual do Planejamento de Acessibilidades e Transportes [1] a distância mínima necessária, em metros, para se fazer uma ultrapassagem segura é calculada através da seguinte fórmula:
-DU = 7VT
-Onde:
-DU: Distância de visibilidade de ultrapassagem (m);
-VT: Velocidade de tráfego (km/h).
-Para rodovias brasileiras nas quais a velocidade máxima é de 110 km/h, de acordo com a legislação prevista pelo Código de Trânsito Brasileiro (CTB) [2], temos que o sensor precisará ter um alcance mínimo de 770 metros.
+Segundo o Manual do Planejamento de Acessibilidades e Transportes \cite{sensorLaserDML40} a distância mínima necessária, em metros, para se fazer uma ultrapassagem segura é calculada através da seguinte fórmula:
+
+$DU = 7*VT$
+\begin{itemize}
+  \item DU - Distância de Ultrapassagem.
+  \item VT - Velocidade de Tráfego ( ou relativa )
+\end{itemize}
+
+Para rodovias brasileiras nas quais a velocidade máxima é de 110 km/h, de acordo com a legislação prevista pelo Código de Trânsito Brasileiro (CTB) \cite{codigoTransitoBrasileiro}, temos que o sensor precisará ter um alcance mínimo de 770 metros.
 Dessa forma, o sensor utilizado será o DML-40-2-1111 da empresa SICK Sensor Intelligence que possui um alcance máximo de 1200 metros, o suficiente para a aplicação do projeto, além de ter um erro considerado satisfatório para ser utilizado em um sistema crítico.
 
-1.2.  ESPECIFICAÇÕES DO SENSOR DML-40-2-1111
-De acordo com o Data Sheet [3] fornecido pelo fabricante, o sensor escolhido obedece as seguintes especificações:
+\subsection{ESPECIFICAÇÕES DO SENSOR DML-40-2-1111}
+De acordo com o Data Sheet \cite{dataSheetDML40} fornecido pelo fabricante, o sensor escolhido obedece as seguintes especificações:
 Especificações gerais em um primeiro momento:
-• Faixa de medição de 0,5 m até 1.200 m com um reflector;
-• Medição por tempo de voo;
-• Possui fácil alinhamento;
-• Parâmetros livremente programáveis;
-• Saídas RS-422, RS-232, PROFIBUS, analógicas e duas de comutação;
-• Parâmetro Near field blanking para a operação através de uma janela de proteção;
 
+\begin{itemize}
+	\item Faixa de medição de 0,5 m até 1.200 m com um reflector;
+	\item Medição por tempo de voo;
+	\item Possui fácil alinhamento;
+	\item Parâmetros livremente programáveis;
+	\item Saídas RS-422, RS-232, PROFIBUS, analógicas e duas de comutação;
+	\item Parâmetro Near field blanking para a operação através de uma janela de proteção;
+\end{itemize}
 
 Benefícios:
-• Intervalos extremamente longos de medição até 1.200 m sobre alvos naturais, oferecem grande flexibilidade nas aplicações em que a distância é fundamental;
-• Alinhamento visível especial que permite o alinhamento fácil e rápido, mesmo a longas distâncias, oferecendo instalação rápida e de baixo custo;
-• Design em forma de caixa de metal resistente para operação e livre de problemas em condições ambientais adversas;
-• Laser de infravermelho para medição e detecção discreta e segura;
-• Software de fácil utilização com uma interface de configuração rápida e simples que garante otimização de custo;
-• Interfaces seriais e analógicas, bem como duas saídas de comutação digitais;
+\begin{itemize}
+	\item Intervalos extremamente longos de medição até 1.200 m sobre alvos naturais, oferecem grande flexibilidade nas aplicações em que a distância é fundamental;
+
+	\item Alinhamento visível especial que permite o alinhamento fácil e rápido, mesmo a longas distâncias, oferecendo instalação rápida e de baixo custo;
+
+	\item Design em forma de caixa de metal resistente para operação e livre de problemas em condições ambientais adversas;
+
+	\item Laser de infravermelho para medição e detecção discreta e segura;
+	\item Software de fácil utilização com uma interface de configuração rápida e simples que garante otimização de custo;
+	\item Interfaces seriais e analógicas, bem como duas saídas de comutação digitais;
+\end{itemize}
