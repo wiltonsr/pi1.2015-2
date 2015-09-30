@@ -1,0 +1,71 @@
+\chapter[Equipamentos]{Equipamentos}
+
+\section {Sensor MFC2} \cite{mfc}
+
+\begin{table}[ht]
+\caption{Detalhes operacionais do sensor a ser utilizado}
+\centering
+\begin{tabular}{| l |  p{7cm} |}
+\hline
+Wave-length & 410...720 nm  \\
+\hline
+Mains power supply & +7.0V ... 16V DC (typ. 14.0V) 120s protection against wrong polarity \\
+\hline
+Power consumption & 2.0 W typ. 125mA@14VDC, 300mA@8VDC - Maximum 36W \\
+\hline
+Fuse protection & 10A \\
+\hline
+High system voltage-response-time & <10ms \\
+\hline
+Operating / storage temperature & -45ºC … + 85ºC(at night -40ºC … + 60ºC) / -40ºC … + 105ºC \\
+\hline
+Shock & 50g \\
+\hline
+Vibration & 20 $m/s^2$ peak@10Hz / 0.14 $m/s^2$ peak @ 1000Hz \\
+\hline
+Protection rating & IP5K0 (typical mounting behind a windshield), mixed gas EN 60068-2-60 \\
+\hline
+\end{tabular}
+\end{table}
+
+Este sensor frontal tem limitações, por exemplo em condições climáticas adversas, tais como chuvas intensas.
+
+\section{GPS}
+
+Para fins de uso veicular o GPS possui duas áreas que podem ser usado, como forma de localização para empresas de segurança e monitoramento, assim como o uso em automóveis de competição off-road, para correto posicionamento geográfico e localização de destinos e rotas \cite{gps3}.
+
+Fatores que afetam a sua precisão:
+
+\begin{itemize}
+  \item Sinal com caminhos múltiplos: Isto ocorre quando o sinal GPS é refletido por objetos como prédios altos ou montanhas, antes de alcançarem o receptor. Isto aumenta o tempo que o sinal leva do satélite até o receptor, causando erros.
+  \item Erros do relógio do receptor: O relógio interno do receptor não é tão preciso quanto o relógio atômico dos satélites GPS. Assim, podem ocorrer pequenos erros na medição do tempo.
+  \item Erros de órbita.
+  \item Número de satélites visíveis: Quanto mais satélites um receptor GPS puder enxergar no céu, melhor a precisão. Prédios, terrenos, interferências eletrônicas ou uma cobertura densa de uma floresta, por exemplo, podem bloquear a recepção do sinal, causando erros de posição ou possivelmente nenhuma leitura de posição no receptor. As unidades GPS geralmente não funcionam dentro de casas ou outras coberturas, debaixo d'água ou da terra \cite{gps}.
+\end{itemize}
+
+Um fator importante é que o GPS pode ser utilizado sob quaisquer condições climáticas \cite{gps2}.
+
+\section{Transponder [ qual a ser utilizado ?]}
+
+Trata-se de um chip que contém memória, microcontrolador e outros dispositivos. Soldado a uma antena que capta das ondas eletromagnéticas do ar, tanto a energia quanto os dados emitidos pelo leitor, que responde às suas solicitações, transmite de volta também através de ondas eletromagnéticas.
+
+Existem alguns tipos de transponders, mas principalmente ativo, passivo e semi-passivo.
+
+O transponder passivo não possui bateria, por isso capta a energia da antena do leitor e usa essa mesma energia para fazer o processamento e refletir o sinal de resposta, com potência menor.
+
+Já o transponder semi-passivo possui bateria apenas para o chip e eventuais sensores, permitindo a reflexão mais rápida da resposta ao leitor.
+
+[ especificações do modelo a ser utilizado ou do projetado? ]
+
+A limitação do transponder está relacionada ao meio em que a onda eletromagnética se propaga e se há ou não interferência de outro sinal na mesma frequência. Este equipamento não sofre interferências climáticas, entretanto seu funcionamento dentro do sistema para garantir que a ultrapassagem é segura necessita das informações transmitidas pelo GPS dos veículos envolvidos, ou pelo sinal dos demais sensores \cite{transponder}.
+
+\begin{itemize}
+  \item Confiabilidade\\
+  Este projeto propõe um sistema crítico que não pode conter falhas. Por tratar-se de um alerta  que previnirá colisões frontais. Serão realizados cálculos em tempo real, além da transmissão de informações entre diferentes veículos montando uma rede entre os carros na região quando o sistema for ativado.
+  Para estes casos há técnicas de tolerância a falhas sugeridas são elas, códigos de detecção e correção de erros e a Watchdog \cite{transponder3}.
+
+  \item Formas de acionamento\\
+  O sistema proposto para emitir alertas durante ultrapassagens em caso de rotas de coleção. Para isto, é necessário que o usuário do sistema realize o acionamento manualmente por meio de um botão. Outra forma para o acionamento é o acionamento da seta, que pelo código de trânsito brasileiro é obrigatório para indicar a intenção de realizar uma ultrapassagem \cite{transponder2}.
+\end{itemize}
+
+De acordo com o tipo de processamento e rede, precisa adicionar o número máximo de conexões
