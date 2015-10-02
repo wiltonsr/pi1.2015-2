@@ -1,1 +1,57 @@
 \chapter[Funcionamento do Sistema]{Funcionamento do Sistema}
+
+\section{Pressuposto}
+
+Para pleno uso do SIAAV, todos os veículos necessitam possuir o sistema. Sendo necessário a aprovação de uma lei que obrigue os novos veículos fabricados a terem o SIAAV e todos os carros já em funcionamento a instalarem. Como essa questão não faz parte do escopo do projeto. A equipe usará o pressuposto de que todos os carros irão possuir o equipamento.
+
+O SIAAV tem como finalidade reduzir o número de acidentes em rodovias brasileiras causados, principalmente, por colisões frontais.
+O sistemá é composto por três equipamentos a fim de torná-lo um sistema redundante:
+
+\begin{itemize}
+  \item Transpônder
+  \item Sensores
+  \item GPS.
+\end{itemize}
+
+Esses equipamentos  tem como finalidade identificar veículos em um raio de até 3,5 km, confirmar sua posição no globo e enviar informações e características do veículo para outros veículos nas proximidades.
+
+\subsection{Porque GPS}
+
+Através do GPS será possível identificar que um veículo vem em direção oposta e se a região em que os veículos se encontram é permitida a ultrapassagem seguindo as normas do Código de Trânsito brasileiro. Também é possível verificar  se um carro está vindo em direção oposta através do transpônder que envia sua posição relativa ao azimute.
+
+O GPS confirmará, através de mapeamento,se a área em que o veículo se encontra é permitida a ultrapassagem, segundo o Código de Trânsito brasileiro \cite{ctb}.
+
+\subsection{Porque Transpônder}
+
+Esses equipamentos  tem como finalidade identificar veículos em um raio de até 3,5 km, confirmar sua posição no globo e enviar informações e características do veículo para outros veículos nas proximidades \cite{transponder}.
+
+\subsection{Porque Sensores}
+
+A fim de tornar o sistema mais seguro,o uso de sensores será empregado. Os sensores têm efetividade entre 500 a 1.200 metros e coletarão informações sobre condições do veículo, se há veículos a frente ou aproximando-se, informações sobre potência, tamanho, peso.
+
+\section{Funcionamento}
+
+O SIAAV identificará através do GPS o local em que se encontra o veículo e caso esteja em áreas mapeadas que as rodovias sejam de mão dupla o sistema entrará em ação.
+A comunicação entre os veículos se dará através do transpônder. Os dados emitidos pelo equipamento são codificados e contêm informações relevantes tais como velocidade, posição, aceleração e distância, sendo possível determinar a que distância um veículo está do outro em direção oposta ou não.
+
+O SIAAV funcionará através de comunicação eletrônica entre todos os carros que estejam equipados com o sistema, utilizando frequências de ondas de rádio para emitir sinais interrogadores a todos os veículos em seu alcance e então os veículos interrogados respondem com as informações necessárias.
+
+Além dos sinais-interrogadores, o veículo-emissor enviará sinais a outros veículos-receptores sobre a possibilidade de uma ultrapassagem ser feita em cima do veículo-emissor, através da analise das informações recebida pela resposta do sinal-interrogador.
+O sistema conta com uma tela de informações, com base no layout de telas de GPS, que mostra os veículos que responderam ao sinal-interrogador, dando ideia ao motorista da posição de outros veículos na estrada.
+Ao identificar uma possível ultrapassagem não-segura o sistema emitirá alertas sonoros e visuais para chamar atenção sobre o ato do motorista. Os alertas visuais se caracterizam por transformar a tela do GPS vermelha e o alerta sonoro de cunho corretivo que sugere ao motorista mudanças no curso, como: “retorne a posição anterior”,”Ultrapassagem potencialmente perigosa”.
+
+\subsection{Como identificar o untuito de ultrapassagem}
+
+\begin{itemize}
+  \item Veículo 1: Veículo que deseja realizar a ultrapassagem.
+  \item Veículo 2: Veículo a ser ultrapassado.
+\end{itemize}
+
+Será definido aqui que o SIAAV identificara que o condutor deseja realizar uma ultrapassagem através dos seguintes fatores:
+
+\begin{itemize}
+  \item A distância entre o Veículo 1 e o Veículo 2 diminui a medida do tempo.
+  \item A velocidade média do Veículo 1 é maior que a velocidade média do Veículo 2.
+  \item O volante do Veículo 1 sofreu mudança angular.
+  \item A seta do Veículo 1 foi acionada.
+\end{itemize}
