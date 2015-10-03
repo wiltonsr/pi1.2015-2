@@ -1,23 +1,29 @@
 \chapter[Escopo]{Escopo}
 
 \section{Objetivo do projeto}
-Desenvolver um sistema anticolisão veicular que alerte o motorista sobre ultrapassagens potencialmente perigosas, contra veículos que estejam vindo em direção contrária.
-O sistema não terá autonomia sobre o veículo em questão, apenas terá a finalidade de alertar se a manobra será segura ou não.
+Desenvolver um sistema anticolisão veicular que alerte o motorista sobre ultrapassagens potencialmente
+perigosas, contra veículos que estejam vindo em direção contrária.
+O sistema não terá autonomia sobre o veículo em questão, apenas terá a finalidade de alertar se a manobra
+será segura ou não.
 
 \section{O que vai ser feito}
 Um Sistema Interveicular de Alerta Anti-colisão de Veículos em rodovias brasileiras (CIAC).
 
 \section{Clientes Do Sistema}
-2.3 - O sistema atenderá motoristas de veículos automotores, que seguem as normas do Código de Trânsito Brasileiro e trafegam por rodovias brasileiras.
+2.3 - O sistema atenderá motoristas de veículos automotores, que seguem as normas do Código de Trânsito
+Brasileiro e trafegam por rodovias brasileiras.
 \section{Onde o sistema Funcionará}
-Visto que no Brasil dos 188.925 acidentes em rodovias, 7.008 causaram mortes e 63.980 deixaram pessoas feridas em 2011, segundo o DNIT, o sistema visa o uso nas rodovias a fim de reduzir esses números. \cite{ministerio}
+Visto que no Brasil dos 188.925 acidentes em rodovias, 7.008 causaram mortes e 63.980 deixaram pessoas
+feridas em 2011, segundo o DNIT, o sistema visa o uso nas rodovias a fim de reduzir esses números. \cite{ministerio}
 
 \section{Velocidade Máxima}
-Foi definido, conforme o Código de Trânsito Brasileiro \cite{ctb}, que a velocidade máxima de operação do equipamento é de 110km/h.
+Foi definido, conforme o Código de Trânsito Brasileiro \cite{ctb}, que a velocidade máxima de operação
+ do equipamento é de 110km/h.
 Esta velocidade será referência para cálculos futuros sobre Distância Máxima.
 
 \section{Distância de Visibilidade de Ultrapassagem}
-De acordo com a Norma de Traçado (JAE P3/94) é considerado que a distância  de ultrapassagem pode ser obtida empiricamente através da expressão:
+De acordo com a Norma de Traçado (JAE P3/94) é considerado que a distância  de ultrapassagem pode ser
+obtida empiricamente através da expressão:
 
 $DU = 7*VT$
 \begin{itemize}
@@ -25,7 +31,8 @@ $DU = 7*VT$
   \item VT - Velocidade de Tráfego ( ou relativa )
 \end{itemize}
 
-Esse cálculo garante a 85\% dos condutores a Distância de Visibilidade, que é a distância mínima para que um motorista ultrapasse um outro veículo em segurança e sem forçá-lo a reduzir sua velocidade. \cite{costa}
+Esse cálculo garante a 85\% dos condutores a Distância de Visibilidade, que é a distância mínima para
+que um motorista ultrapasse um outro veículo em segurança e sem forçá-lo a reduzir sua velocidade. \cite{costa}
 
 Os cálculos para tomada de decisão do sistema serão baseados, entre outros, nas seguintes características:
 
@@ -44,7 +51,9 @@ Outras relações de Velocidade e Distância estão na tabela abaixo:
 \end{figure}
 
 \section{Distância mínima até o veículo a frente}
-Utilizando os dados fornecidos na figura \ref{fig:visibilidade}, podemos definir a distância mínima de segurança, assumindo que o veículo esteja a uma velocidade máxima de 110km/h, de 264 metros. Esta distância tem como base a Distância de Visibilidade para Paragem (DP), acrescidos 20\% para margem de segurança.
+Utilizando os dados fornecidos na figura \ref{fig:visibilidade}, podemos definir a distância mínima de
+segurança, assumindo que o veículo esteja a uma velocidade máxima de 110km/h, de 264 metros. Esta distância
+tem como base a Distância de Visibilidade para Paragem (DP), acrescidos 20\% para margem de segurança.
 
 \section{Tempo de resposta dos aparelhos empregados no sistema}
 \begin{itemize}
@@ -55,20 +64,27 @@ Utilizando os dados fornecidos na figura \ref{fig:visibilidade}, podemos definir
 \section {5W2H}
 
 \subsection{O que será feito}
-Será Construido um sistema anticolisão veícular que alerto o motorista sobre ultrapassagens potencialmente perigosas contra veículos que estejam vindo em direção contrária. O sistema não terá autonomia sobre os comandos do veículo, apenas terá a finalidade de alertar se a manobra é segura ou nao.
+Será Construido um sistema anticolisão veícular que alerto o motorista sobre ultrapassagens potencialmente
+perigosas contra veículos que estejam vindo em direção contrária. O sistema não terá autonomia sobre os
+comandos do veículo, apenas terá a finalidade de alertar se a manobra é segura ou nao.
 
 \subsection{Porque será feito}
-Foi observado que no Brasil há um número muito alto de acidentes com ferimentos ou mortes. 188.925 acidentes em rodovias, das quais 7.008 causaram mortes e 63.980 deixaram pessoas feridas em 2011, segundo o DNIT [4]. Sendo assim o projeto visa construir um sistema que diminua o percentual de acidentes.
+Foi observado que no Brasil há um número muito alto de acidentes com ferimentos ou mortes. 188.925
+ acidentes em rodovias, das quais 7.008 causaram mortes e 63.980 deixaram pessoas feridas em 2011,
+ segundo o DNIT [4]. Sendo assim o projeto visa construir um sistema que diminua o percentual de acidentes.
 
 \subsection{Onde será feito}
-UnB-Fga
+O projeto será desenvolvido dentro do ambiente acadêmico dos estudantes envolvidos no projeto, no caso
+Universidade de Brasília, campus Gama.
 
 \subsection{Quando será feito}
-O Cronograma do primeiro e segundo ponto de controle estão disponível nas  respectivas Figuras \ref{fig:1cronograma},
-\ref{fig:2cronograma} dos Apêndices
+Os cronogramas referentes ao primeiro e segundo ponto de controle estão disponíveis nas respectivas figuras 1
+3 e 14 dos Apêndices.
 
 \subsection{Por quem será feito}
-Pela Equipe 5 da matéria de Projeto integrador 1. A equipe é composta por diversos estudantes de Engenharia do campus FGA
+Pela Equipe 5 da matéria de Projeto Integrador 1.
+A equipe é composta por diversos estudantes de Engenharia do campus Gama da Universidade de Brasília.
+
 
 \begin{description}
   \item[Engenharia de Energia] \hfill
@@ -116,4 +132,7 @@ Custo da Interação 1: 3763,2 R\$
 
 
 \subsection{Como será feito}
-Por meio de pesquisas sobre acidentes em estradas brasileiras, comparações com tecnologias já empregadas ou tecnologias em desenvolvimento,  análise técnica de equipamentos avulsos como transpônder, GPS,  sensores, análise de viabilidade técnica, análises sobre a estrutura dos veículos candidatos ao porte do equipamento, consultas a legislação brasileira.
+Por meio de pesquisas sobre acidentes em estradas brasileiras, comparações com tecnologias já empregadas ou
+tecnologias em desenvolvimento,  análise técnica de equipamentos avulsos como transpônder, GPS,  sensores,
+análise de viabilidade técnica, análises sobre a estrutura dos veículos candidatos ao porte do equipamento,
+consultas a legislação brasileira.
