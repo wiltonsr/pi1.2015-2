@@ -1,15 +1,36 @@
 \chapter[Introdução]{Introdução}
 
-\section{Objetivo}
-Este relatório contempla o desenvolvimento de um projeto preliminar para um sistema que auxilie o condutor nos momentos de
-realizar ultrapassagens em rodovias. O sistema emitirá alertas de colisão indicando quando é seguro ultrapassar um veículo
-por meio de uma rede de comunicação inter-veicular. Este sistema não tem como objetivo atuar sobre os comandos do veículo.
-Será de sua responsabilidade apenas informar ao usuário se é segura ou não uma manobra.
+Não é difícil imaginar que os acidentes que possuem maior número de vítimas fatais são do tipo
+colisão frontal mas a realidade assusta, de 2010 a 2014 quase metade dos acidentes com
+fatalidades em rodovias federais, um total de 48,3\%, foram fruto desse tipo de colisão e de
+atropelamentos. É um tipo de acidente que embora possua baixa ocorrência é extremamente violento. \cite{ipea}
 
-\section{Dados}
+	Ao contrário do que se pensa, a maioria dos acidentes ocorre a luz do dia, com tempo bom.
+  De acordo com a Polícia Rodoviária Federal os motoristas envolvidos em acidentes não estão
+  cansados, dirigem no máximo uma hora, sendo a imprudência causa
+  principal de acidentes. \cite{acidentesDeTransitoNoBrasil}
 
-\subsection{Acidentes}
+	Essas informações recebem comprovação nos relatórios do IPEA, de 2008, informando que colisões
+   frontais representam 4\% de todos os acidentes embora possua uma parcela 24,6\% do total de
+   mortes. 81,75\% dos acidentes desse tipo ocorreram em pistas simples com tráfego nos dois
+   sentidos e o principal motivo apontado seriam: ultrapassagem indevida, ultrapassagem de
+   veículos lentos ou em congestionamento e falta de visibilidade. \cite{fatoresCondicionantesGravidade}
 
-Segundo Ipea, nos últimos dez anos, o Brasil registrou aumento de 50,3\% no número de acidentes em rodovias federais. As mortes cresceram 34,5\% e a quantidade de feridos, 50\%. Mas, nos últimos quatro anos, esses números vêm reduzindo; de 2010 a 2014, as mortes diminuíram aproximadamente 4,5\%.
-As colisões frontais e atropelamentos são tipos de acidentes que apresentam baixa ocorrência (6,5\% do total em 2014), mas respondem por quase metade (48,3\%) das mortes nas rodovias federais.
-Os automóveis estão envolvidos na maior parte dos acidentes nas rodovias (75,2\%). Justamente a falta de atenção dos motoristas que faz com que as colisões frontais, oriundas de ultrapassagens perigosas, representem 34\% das mortes, de acordo com a Polícia Rodoviária Federal (PFR). Só no ano passado, nas estradas brasileiras, foram registrados 153.677 acidentes e 7.466 mortes \cite{ipea}.
+	Em outro relatório do IPEA, de 2004, curiosamente mantém a mesma porcentagem apresentada no
+   relatório recente de 2008 e pode ser acompanhado na Figura \ref{fig:introducao}. \cite{custos_acidentes_transito}
+
+   \begin{figure}[h]
+     \centering
+     \includegraphics[width=450px, scale=0.5]{figuras/introducao}
+     \caption{Tipo versus Gravidade dos acidentes em rodovias federais – 2004}
+     \label{fig:introducao}
+   \end{figure}
+
+
+   Mediante análise dos dados apontados foi identificada uma demanda e este relatório
+   contempla o desenvolvimento de um projeto preliminar para um sistema que auxilie o
+   condutor a realizar ultrapassagens em rodovias simples, de mão dupla, com segurança.
+    O sistema emitirá alertas de colisão indicando quando é seguro ultrapassar um veículo
+     por meio de uma rede de comunicação inter-veicular. Este sistema não tem como objetivo
+      atuar sobre os comandos do veículo. Será de sua responsabilidade apenas informar
+      ao usuário se é segura ou não uma manobra.
