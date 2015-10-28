@@ -1,0 +1,42 @@
+\chapter[MAPA]{MAPA}
+
+\section{Relatório das rodovias mais perigosas e dos carros mais envolvidos em acidentes}
+
+\subsection{BR 262}
+A BR 262 é uma rodovia transversal brasileira que liga os Estados do Espírito Santo, Minas Gerais, São Paulo e Mato grosso do Sul. Tem início em Vitória (ES) e passa por cidades importantes como Manhuaçu, Belo Horizonte, Araxá, Uberaba, Três Lagoas e Campo Grande. Percorre 999,8 Km no estado de Minas Gerais cortando-o de leste a oeste. Em 2009 apresentou um elevado número de acidentes, foram registrados 9.614 acidentes em que 280 pessoas morreram. Sendo que somente no percurso entre Belo Horizonte e Governador Valadares houveram 2.975 acidentes, no qual 2.159 ficaram feridas e 138 vieram a óbito. Atualmente a rodovia já possui trechos duplicados, mas ainda conta com muitos trechos de mão única.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=400px, scale=0.5]{figuras/mapa}
+  \caption{Rota BR 262. Disponível em: \cite{wikipedia}, acesso em 16 de outubro de 2015)}
+  \label{table:mapa}
+\end{figure}
+
+\subsection{Justificativa}
+
+Em 2014 o Estado de Minas Gerais foi o que apresentou o maior número de acidentes e mortos em rodovias, seguido por Paraná, Santa Catarina, São Paulo e Rio de Janeiro. Essas regiões representam grande parte do contingente populacional do país e, especificamente, o Sudeste responde 49,5\% do PIB do Brasil, sendo São Paulo, Rio de Janeiro e Minas Gerais, respectivamente, os três estados mais ricos do país. Isso faz com que o fluxo rodoviário nessas regiões seja intenso, interferindo no número de acidentes. Seguem alguns dados na tabela abaixo:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=400px, scale=0.5]{figuras/table1}
+  \includegraphics[width=400px, scale=0.5]{figuras/table2}
+  \caption{Quantidade de acidentes e mortes por estado. Disponível em: \cite{ipea3}, acesso em 17 de outubro de 2015)}
+  \label{table:table}
+\end{figure}
+
+Considerando os tipos de acidente, é possível verificar que a colisão frontal foi responsável por 33,7\% das mortes. Nos acidentes desse tipo morreram 40,4 pessoas a cada 100 acidentes, 89,71\% das colisões frontais ocorreram em pistas de mão única. A maior causa dos acidentes é a falta de atenção do motorista \cite{ipea2}.
+
+A BR 262 é considerada uma rodovia perigosa, pois apresenta muitos trechos onde a pista é de mão dupla, além de algumas deficiências como falta de sinalização e condições ruins de tráfego, o que torna viável o implemento do sistema anticolisão veicular.
+
+\subsection{2. Veículos envolvidos em acidentes}
+
+Os automóveis apresentam o maior percentual de envolvimento nos acidentes de trânsito entre todos os modais de transporte, em função do maior número da frota circulante. O gráfico a seguir nos traz números exatos do envolvimento das modalidades de transporte nos acidentes com mortes e vítimas com lesões graves em 2014 quando a frota de veículos automotores era de 81,3 milhões.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=400px, scale=0.5]{figuras/grafico}
+  \caption{Envolvimento das modalidades de transporte nos acidentes com mortes e vítimas com lesões graves. Disponível em: \cite{ipea2}, acesso em 16 de outubro de 2015)}
+  \label{table:mapa}
+\end{figure}
+
+Desde 2007 a PRF vem fazendo levantamento de dados sobre quais são os veículos que mais se envolvem em acidentes. Em primeiro lugar temos o Volkswagen Gol, que esteve presente em 14.125 acidentes. Em segundo lugar vem o Fiat Uno, envolvido em 8200 acidentes, seguido pelo Fiat Palio, com registro de 7.041 acidentes. Em quarto lugar vem o Chevrolet Celta, participando de 5.931 acidentes. Em quinto lugar temos a Honda CG 150, envolvida em 5.784 acidentes. Sendo assim, o sistema anticolisão veicular será implantado no Volkswagen Gol, a fim de ilustrar nosso cenário na BR 262 \cite{terra}.
