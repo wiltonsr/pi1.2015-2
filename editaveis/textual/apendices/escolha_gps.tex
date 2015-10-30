@@ -62,8 +62,10 @@ pelos satélites no momento do envio da onda portadora, com base nesse dado e
  $ \Delta S = V \times  \Delta t $
 
  Onde:
+
  $ \Delta S $ é a distância entre o satélite e o receptor.
 V é a velocidade de propagação da onda.
+
 $ \Delta t $ é o tempo de envio da onda portadora.
 
 Como citado na seção 1.1, o GPS possui três segmentos, espacial, de controle e
@@ -72,7 +74,7 @@ de usuário, a figura \ref{fig:segmentos_gps} ilustra a iteração dos segmentos
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=400px, scale=1]{figuras/segmentos_gps}
+  \includegraphics[width=250px, scale=1]{figuras/segmentos_gps}
   \caption{Segmentos de GPS  \cite{9gps}}
 \label{fig:segmentos_gps}
 \end{figure}
@@ -84,14 +86,14 @@ de usuário, a figura \ref{fig:segmentos_gps} ilustra a iteração dos segmentos
 Esse módulo faz a aquisição e rastreamento de forma rápida e tem aplicação
  para consumidores móveis. Além disso o módulo tem boa sensibilidade e pode
  ser utilizado em muitos ambientes diferentes, sob condições diversas \cite{10gps}.
- A tabela \ref{table:especificacao_gps23} mostra as especificações desse dispositivo e a figura 03 é a
+ A tabela \ref{table:especificacao_gps23} mostra as especificações desse dispositivo e a figura \ref{fig:a2100} é a
  imagem do mesmo.
 
 
   \begin{table}[ht]
   \caption{Especificações do A2100-A/B. Baseado em: \cite{10gps}}
   \centering
-  \begin{tabular}{| l |  p{10cm} |}
+  \begin{tabular}{| l |  p{4cm} |}
   \hline
   Característica & Valores \\
   \hline
@@ -123,7 +125,7 @@ Esse módulo faz a aquisição e rastreamento de forma rápida e tem aplicação
 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=400px, scale=1]{figuras/a2100}
+    \includegraphics[width=200 px, scale=1]{figuras/a2100}
     \caption{A2100-A/B   \cite{10gps}}
   \label{fig:a2100}
   \end{figure}
@@ -133,14 +135,15 @@ Esse módulo faz a aquisição e rastreamento de forma rápida e tem aplicação
   O ME-1000RW é um módulo receptor GPS com antena acoplada. A antena é conectada
   ao receptor através de um Amplificador de Baixo Ruído. O receptor é capaz de
   receber sinais de até 65 satélites GPS e informar a posição e o tempo precisos,
-  além disso possui baixo consumo \cite{11gps}. A figura 04 e a tabela \ref{table:especificacao_gps_me1000}
-  descrevem as  características do produto. O preço desse modulo é de R\$ 98,99 [12].
+  além disso possui baixo consumo \cite{11gps}. A figura \ref{fig:gps_me1000} e a tabela
+  \ref{table:especificacao_gps_me1000}
+  descrevem as  características do produto. O preço desse modulo é de R\$ 98,99 \cite{12gps}.
 
 
 \begin{table}[ht]
 \caption{Especificações do ME-1000RW Baseado em: \cite{11gps}}
 \centering
-\begin{tabular}{| l |  p{10cm} |}
+\begin{tabular}{| l |  p{5cm} |}
 \hline
 Característica & Valores \\
 \hline
@@ -164,9 +167,9 @@ Tensão de operação & 3,6 a 6 VDC \\
 \hline
 Corrente máxima & 23 mA \\
 \hline
-Temperatura de operação & - 20°C a +60°C \\
+Temperatura de operação & - 20ºC a +60ºC \\
 \hline
-Temperatura de armazenamento & -40°C a +80°C \\
+Temperatura de armazenamento & -40ºC a +80ºC \\
 \hline
 Sensibilidade & -161 dB \\
 \hline
@@ -177,7 +180,118 @@ Sensibilidade & -161 dB \\
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=400px, scale=1]{figuras/gps_me1000}
+  \includegraphics[width=200px, scale=1]{figuras/gps_me1000}
   \caption{ME-1000RW \cite{11gps}}
 \label{fig:gps_me1000}
 \end{figure}
+
+\subsection{NEO - 6M}
+
+O NEO-6M é um receptor de GPS autônomo, de alto desempenho, flexível e de
+baixo custo, ideal para dispositivos móveis com restrições de custo e
+ espaço. O dispositivo possui 50 canais e excelente performance de navegação,
+ mesmo sob condições adversas \cite{13gps}. A tabela \ref{table:especificacao_gps_neo}
+  e a figura \ref{fig:gps_neo}, ilustram as
+ características desse modulo, que custa R\$88,20 \cite{14gps}.
+
+
+ \begin{table}[ht]
+ \caption{Especificações do NEO-6M Baseado em: \cite{13gps}}
+ \centering
+ \begin{tabular}{| l |  p{5cm} |}
+ \hline
+ Característica & Valores \\
+ \hline
+ Canais & 50 \\
+ \hline
+ Frequência & 1575,42 MHz \\
+ \hline
+ Precisão de distância & 2,5 m \\
+ \hline
+ Precisão de tempo & Precisão de velocidade \\
+ \hline
+ Limite de operação para velocidade & 500 m/s \\
+ \hline
+ Peso & 28 g \\
+ \hline
+ Dimensões L x A x P & 16 x 12,2 x 2,4 mm \\
+ \hline
+ Tensão de operação & 0,5 a 3,6 VDC \\
+ \hline
+ Tensão de operação & 0,5 a 3,6 VDC \\
+ \hline
+ Corrente máxima & 10 mA \\
+ \hline
+ Temperatura de operação & - 40ºC a +85ºC \\
+ \hline
+ Sensibilidade & -161 dB \\
+ \hline
+ \end{tabular}
+ \label{table:especificacao_gps_neo}
+ \end{table}
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=200px, scale=1]{figuras/gps_neo}
+   \caption{NEO-6M  \cite{14gps}}
+ \label{fig:gps_neo}
+ \end{figure}
+
+ O módulo GPS A2200-A é a primeira implementação do Maestro de receptores
+ GPS que podem ser usados altamente integrado como componentes SMT. Uma
+ implementação muito fácil permite
+ receber a posição, a velocidade e informação de tempo, é um módulo concebido
+ para um ambiente de 3,3 V \cite{15gps}. Seu preço é R\$ 25,00 \cite{16gps}. Na tabela \ref{table:especificacao_gps_neo6m},
+ estão as especificações do produto e a figura 06 é a imagem do mesmo.
+
+ \begin{table}[ht]
+ \caption{Especificações do NEO-6M. Baseado em: \cite{15gps}}
+ \centering
+ \begin{tabular}{| l |  p{5cm} |}
+ \hline
+ Característica & Valores \\
+ \hline
+ Canais & 48 \\
+ \hline
+ Frequência & 1,575 MHz \\
+ \hline
+ Precisão de distância & 2,5 m \\
+ \hline
+ Precisão de distância & 2,5 m \\
+ \hline
+ Precisão de tempo & Não informado \\
+ \hline
+ Precisão de velocidade & Não informado \\
+ \hline
+ Limite de operação para velocidade & Não informado \\
+ \hline
+ Peso & 0,6 g \\
+ \hline
+ Dimensões L x A x P & 14 x 10,2 x 2,5 mm \\
+ \hline
+ Tensão de operação & 3,0 a 3,6 VDC \\
+ \hline
+ Corrente máxima & 69 mA \\
+ \hline
+ Temperatura de operação & - 40ºC a +85ºC \\
+ \hline
+ Sensibilidade & -163 dB \\
+ \hline
+ \end{tabular}
+ \label{table:especificacao_gps_neo6m}
+ \end{table}
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[width=200px, scale=1]{figuras/gps_neo_6m}
+   \caption{NEO-6M 2200  \cite{16gps}}
+ \label{fig:gps_neo_6m}
+ \end{figure}
+
+\section{CONCLUSÃO}
+
+Foi constatado que os GPS têm valores de restrição muito parecidos, além de
+estarem na mesma faixa de preço, com exceção do NEO-6M. Dessa forma o fator
+decisivo para a escolha do módulo foi a interface serial. Conforme as
+especificações do Transponder a ser utilizado no projeto, o módulo de GPS
+  escolhido foi o ME-1000RW, que tem a mesma interface serial que o dispositivo.
