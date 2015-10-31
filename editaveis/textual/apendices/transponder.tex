@@ -1,1 +1,81 @@
 \chapter[TRANSPONDER VDL 4000/VTE CNS SYSTEMS]{TRANSPONDER VDL 4000/VTE CNS SYSTEMS}
+
+
+\section{Conceito}
+Transponder é a abreviatura para transmiter/responder, ou seja, um sistema
+composto de um leitor, que solicita os dados armazenados em um segundo
+transmissor, ou seja, um sistema de comunicação em duas vias.
+
+Existem transponders passivos e ativos:
+
+\begin{itemize}
+  \item Passivos: Transponders passivos são frequentemente encontrados,
+  sendo equipamentos relativamente simples, podendo ser observados na forma
+  de etiquetas ou chips, desprovidos de baterias ou fontes próprias de energia
+  , são energizados e ativados quando na presença do leitor, por meio da
+   emissão de radiofrequência. Frequentemente utilizados no meio
+   comercial/industrial, bem como em chaves codificadas.
+  \item Ativos: Transponders ativos são em geral mais complexos que os
+  modelos passivos, pois envolvem a emissão de dados via radiofrequência
+  tanto na requisição de dados bem como no envio da resposta. Com aplicação
+  difundida nos campos aeronáutico e naval, servem como base de
+  comunicações/identificação a longa distância. Por serem equipamentos ativos,
+  necessitam de uma fonte energética constante. Possuem uma taxa de
+  transmissão de dados muito superior aos modelos passivos.
+\end{itemize}
+
+Para aplicação em nosso caso, abordaremos apenas o conceito de transponders ativos.
+
+\section{Como Funciona?}
+Um transponder ativo funciona à base de emissão de radiofrequência, tanto para
+solicitar os dados de outros dispositivos bem como para emitir os dados
+armazenados em si. Desta forma, é necessário notar que um transponder não
+fornece dados, sejam eles quaisquer sejam, mas se apresenta como uma solução
+versátil para comunicação à longa distância, transmitindo dados
+armazenados/coletados pelo sistema ao qual está acoplado.
+
+No caso da aplicação aeronáutica, os transponders são utilizados para
+transmitir às estações de controle em solo dados como posição, altitude,
+velocidade e direção das aeronaves, sendo que esses dados são obtidos
+por diferentes sensores.
+
+Como referência, já existe um sistema de transponders homologado
+para identificação veicular em rodovias no Brasil, o SINIAV, que
+tem o intuito de identificar os veículos que trafegam pelas
+rodovias ao passarem por postos de controle espalhados ao longo do
+trajeto. Uma aplicação mais rotineira de uma espécie de transponder
+é o sistema de pagamento automático de pedágios em estradas sob concessão.
+
+\section{Aplicação no caso}
+Para o caso ao que esta pesquisa se aplica, o modelo de transponder seria
+utilizado para transferir entre os veículos os dados obtidos, ou seja,
+velocidade e posição, que serão respectivamente coletados pelo velocímetro
+e GPS. Desta forma, conseguimos que esses dados, necessários aos cálculos
+base do sistema, sejam transmitidos à distância necessária e com alto grau
+de confiabilidade, uma vez que, ao utilizar radiação eletromagnética para
+transmitir os dados, um transponder não sofre com interferências climáticas,
+ambientais e demais, o que o torna uma boa opção para integrar um sistema crítico.
+
+\section{Modelo escolhido}
+Para integrar o projeto, foi escolhido um sistema já desenvolvido para aplicação
+veicular, visando tráfego de equipes de solo em aeroportos, sendo ele o seguinte:
+
+CNS Systems – VDL4000/VTE \cite{datasheet_transponder}
+O modelo aqui referenciado apresenta compatibilidade de conexão com os demais
+componentes via porta RS422. O alcance de um transmissor VHF é delimitado pela
+ linha de visão (line of sight), sendo que esta pode ser calculada da seguinte
+ forma:
+
+ $ D = \sqrt{12.7 \times A_{m}} $
+
+ Onde D é o referido alcance, e Am é a altura a que o receptor se encontra
+ localizado. No caso, o veículo referência possui uma altura de 1464mm, ou
+ 1,464 metros, ou seja, o alcance com o transmissor posicionado no teto do
+ veículo seria de aproximadamente 4,3 Km em terreno plano, mostrando-se
+ adequado à aplicação no caso proposto.
+
+ É importante notar que a frequência utilizada é regulamentada pela ANATEL
+ (Agência Nacional de Telecomunicações) para transmissão em solo, não havendo
+  assim restrições em relação à radiopropagação ou níveis de energia
+  eletromagnética.
+  
