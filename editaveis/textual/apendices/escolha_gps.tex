@@ -1,6 +1,6 @@
 \chapter[Escolha GPS]{Escolha Sistema de Posicionamento Global}
-
-\section{Aspectos Gerais}
+\begin{enumerate}
+\item \textbf{Aspectos Gerais}
 
 O Sistema de Posicionamento Global, GPS, é um sistema de radionavegação
 baseado em satélite, que foi desenvolvido na década de 70, pelo departamento
@@ -37,7 +37,7 @@ ponto da terra, pelo menos 4 satélites conseguem identificar a posição do
 usuário, além disso não há necessidade de intervisibilidade entre estações
 para seu funcionamento e ele opera sob quaisquer condições climáticas \cite{sobre_gps}.
 
-\section{Especificações do GPS}
+\item \textbf{Especificações do GPS}
 
 O GPS possui dois modos de operação, o padrão, Standard Positioning Service,
 SPS, e o preciso, Precise Positioning Service, PPS. O SPS é gratuito e tem
@@ -80,8 +80,9 @@ de usuário, a figura \ref{fig:segmentos_gps} ilustra a iteração dos segmentos
 \end{figure}
 
 
-\section{JUSTIFICATIVAS DE ESCOLHA}
-\subsection{GPS A2100-A/B}
+\item \textbf{JUSTIFICATIVAS DE ESCOLHA}
+\begin{enumerate}
+\item \textbf{GPS A2100-A/B}
 
 Esse módulo faz a aquisição e rastreamento de forma rápida e tem aplicação
  para consumidores móveis. Além disso o módulo tem boa sensibilidade e pode
@@ -130,7 +131,7 @@ Esse módulo faz a aquisição e rastreamento de forma rápida e tem aplicação
   \label{fig:a2100}
   \end{figure}
 
-  \subsection{ME-1000RW}
+  \item \textbf{ME-1000RW}
 
   O ME-1000RW é um módulo receptor GPS com antena acoplada. A antena é conectada
   ao receptor através de um Amplificador de Baixo Ruído. O receptor é capaz de
@@ -185,7 +186,7 @@ Sensibilidade & -161 dB \\
 \label{fig:gps_me1000}
 \end{figure}
 
-\subsection{NEO - 6M}
+\item \textbf{NEO - 6M}
 
 O NEO-6M é um receptor de GPS autônomo, de alto desempenho, flexível e de
 baixo custo, ideal para dispositivos móveis com restrições de custo e
@@ -287,11 +288,12 @@ baixo custo, ideal para dispositivos móveis com restrições de custo e
    \caption{NEO-6M 2200  \cite{16gps}}
  \label{fig:gps_neo_6m}
  \end{figure}
-
-\section{CONCLUSÃO}
+\end{enumerate}
+\item \textbf{CONCLUSÃO}
 
 Foi constatado que os GPS têm valores de restrição muito parecidos, além de
 estarem na mesma faixa de preço, com exceção do NEO-6M. Dessa forma o fator
 decisivo para a escolha do módulo foi a interface serial. Conforme as
 especificações do Transponder a ser utilizado no projeto, o módulo de GPS
   escolhido foi o ME-1000RW, que tem a mesma interface serial que o dispositivo.
+\end{enumerate}

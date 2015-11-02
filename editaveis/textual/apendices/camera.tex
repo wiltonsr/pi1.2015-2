@@ -1,6 +1,6 @@
 \chapter[Relatório Câmera]{Relatório Câmera}
-
-\section{Justificativa da escolha}
+\begin{enumerate}
+\item \textbf{Justificativa da escolha}
 
 Para uma melhor análise das condições de tráfego veicular nas rodovias, com o
 intuito de projetar um sistema que emite alertas de colisão veicular, fez-se
@@ -9,7 +9,7 @@ do tráfego dos veículos, assim como sua posição na pista, com objetivo de
 diminuir os erros de dados do sistema. Para isso foi escolhido uma câmera
 com base no sistema anti colisão  Toyota Safety Sense \cite{toyota_safety}, cujo modelo é o AWS650 da 3M.
 
-\subsection{Justificativa da câmera AWS650}
+\item \textbf{Justificativa da câmera AWS650}
 
 Para um bom desenvolvimento do projeto, fez-se necessário uma abrangência maior de dispositivos para coletar informações no ambiente de tráfego do veículo, para que dessa forma obtenha-se redundância de informações com o intuito de evitar falha no sistema  caso algum outro dispositivo falhe. Tais requisitos são:
 
@@ -23,8 +23,9 @@ A partir dessas premissas, foi analisado dois sistemas que se destacaram perante
 
 - AWS650;
 
-\subsection{Especificações}
-\subsubsection{Toyota Safety Sense}
+\item \textbf{Especificações}
+\begin{enumerate}
+\item \textbf{Toyota Safety Sense}
 
 Identifica quando o veículo da frente está parado e assim emite um alerta para o condutor de forma que o mesmo possa ter tempo de reação para acionar o sistema de freios ou então o acionamento automático caso o condutor não o acionou quando avisado pelo sistema;
 
@@ -34,14 +35,15 @@ Suporte de visibilidade no Dispositivo AWS650turna, onde identifica um veiculo v
 
 Detecta pedestre na pista e aciona o sistema de freios do automóvel de forma a evitar colisão;
 
-\subsubsection{AWS650}
+\item \textbf{AWS650}
 Mede e calcula em tempo real a distância entre o veiculo e o veiculo que está imediatamente em sua frente, emitindo um alerta sonoro ao condutor caso essa distância seja muito próxima;
 
 Identifica e calcula em tempo real a distância entre as rodas do veiculo e as faixas da esquerda e da direita, emitindo um alerta sonoro ao condutor, mostrando que houve uma mudança de faixa;
+\end{enumerate}
 
-\subsection{Escolha}
+\item \textbf{Escolha}
 
-Com base nos itens 1.1.2.1, 1.1.2.2 e nos requisitos do projeto, foi escolhido a câmera AWS650, pois a mesma atende todos os requisitos do projeto na qual será utilizado todas as funções da câmera. Tal escolha foi baseada no sistema  da Toyota Safety Sense, em que não foi escolhido por possuir excesso de funções que não vão ser úteis para o sistema, além de tais funções interferirem no funcionamento do veiculo, como o acionamento dos freios  por exemplo,  onde viola a restrição do projeto no qual diz que o sistema não pode interferir nas funções de funcionamento do veículo.
+Com base nos itens analisados e nos requisitos do projeto, foi escolhido a câmera AWS650, pois a mesma atende todos os requisitos do projeto na qual será utilizado todas as funções da câmera. Tal escolha foi baseada no sistema  da Toyota Safety Sense, em que não foi escolhido por possuir excesso de funções que não vão ser úteis para o sistema, além de tais funções interferirem no funcionamento do veiculo, como o acionamento dos freios  por exemplo,  onde viola a restrição do projeto no qual diz que o sistema não pode interferir nas funções de funcionamento do veículo.
 
 Segundo a Care Drive \cite{care_drive}, AWS é usado principalmente em estradas, via expressa urbana e outra estrada de alta qualidade, cujo principal objetivo é de auxiliar o condutor a manter-se na pista de forma a evitar acidentes de trânsito causado pela fuga de faixa a qual o mesmo percorre, assim como manter a  distância entre os veículos na pista, evitando assim, colisões frontais. O produto combina identificação de imagem, estimativa de risco e muitas tecnologias de ponta. Quando o veículo ultrapassa a faixa da pista à qual percorre, aproxima-se muito do veículo da frente ou tenta ultrapassar a curta distância, o sistema soa um alarme ao motorista automaticamente para que o mesmo possa corrigir a direção ou aumente a distância entre os veículos.
 
@@ -54,7 +56,7 @@ O sistema AWS apenas tem a função de alertar a segurança ao condutor, cabendo
 \label{fig:dispositivo_AWS650}
 \end{figure}
 
-\section{Especificaçoes do AWS650}
+\item \textbf{Especificaçoes do AWS650}
 
 A tabela abaixo mostra as especificações do produto:
 
@@ -114,7 +116,7 @@ Falha do Sistema & 1. Chuva forte, Forte neblina, condições climáticas como n
 \label{fig:aviso_mudanca_faixa}
 \end{figure}
 
-\subsection{Aviso Dianteiro de Colisão}
+\item \textbf{Aviso Dianteiro de Colisão}
 
 Nesse quesito o sistema funciona de acordo com a tabela \ref{table:aviso_dianteiro} abaixo:
 
@@ -167,7 +169,7 @@ Falha do Sistema & 1. Chuva forte, Forte neblina, condições climáticas como n
 \label{fig:funcionamento_sistema_frontal}
 \end{figure}
 
-\subsection{Função de saída de video}
+\item \textbf{Função de saída de video}
 As funções de video do sistema AWS650 estão descritos nas imagens \ref{fig:visao_camera} e \ref{fig:visao_camera2}, onde mostra como as imagens são processadas em tempo real.
 
 
@@ -185,7 +187,7 @@ As funções de video do sistema AWS650 estão descritos nas imagens \ref{fig:vi
 \label{fig:visao_camera2}
 \end{figure}
 
-\subsection{Instalação}
+\item \textbf{Instalação}
 Para uma melhor visibilidade do AWS650, o dispositivo deve ser acoplado no para brisas do automóvel, onde não pode haver nenhum tipo de sujeira no dispositivo que possa impedir sua visão, dessa forma o mesmo terá uma maior área de visibilidade da pista para realizar a varredura. A disposição do dispositivo no centro do para brisas se dá também para que ele não prejudique a visão do condutor.
 
 De modo que o dispositivo tenha um correto funcionamento, deve-se seguir corretamente o processo de calibragem da câmera ao automóvel à qual será instalado, tal procedimento está melhor illustrado na figura \ref{fig:instalacao_camera}:
@@ -197,3 +199,4 @@ De modo que o dispositivo tenha um correto funcionamento, deve-se seguir correta
   \caption{Ilustração da calibragem do dispositivo AWS650 no automóvel}
 \label{fig:instalacao_camera}
 \end{figure}
+\end{enumerate}
