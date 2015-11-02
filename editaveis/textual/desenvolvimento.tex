@@ -1,5 +1,61 @@
 \chapter[Desenvolvimento]{Desenvolvimento}
 
+\section{Funcionamento do Sistema}
+
+O sistema CIAC foi desenhado para funcionar de acordo com o fluxo de uso ilustrado
+em linguagem BPM na Figura \ref{fig:funcionamento_sistema}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=470px, scale=1]{figuras/funcionamento_sistema}
+  \caption{Fluxograma de Funcionamento do Sistema CIAC}
+\label{fig:funcionamento_sistema}
+\end{figure}
+
+O sistema pode se comportar de duas maneiras diferentes nos veículos que possuem
+o CIAC instalado: A Executar a Ultrapassagem e No Sentindo Oposto. Cada uma das duas
+está representada na sua respectiva lane do fluxo de uso.
+
+\subsection{Veículo a Executar a Ultrapassagem}
+O CIAC é iniciado quando é dada a partida no automóvel. Na lane do veículo a ultrapassar,
+há um estado de inércia do sistema, representado pelo evento: Carro em Movimento
+na Faixa Direita. Este permanece neste estado até que não exista inteção de
+ultrapassagem.
+
+Caso seja identificada a intenção de desligar o sistema, esta é realizada, caso
+contrário o CIAC volta para o estado de inércia na faixa direita.
+
+O CIAC identifica através do sistema de sensoriamento se há um carro a frente
+para ser ultrapassado. Se existir, o fluxo segue para o próximo estágio, caso
+contrário, segue o sistema de Movimento Simples.
+
+Identificado o carro para ser ultrapassado a frente, o CIAC verifica se há a
+intenção por parte do motorista de ultrapassá-lo. Existindo, o fluxo do sistema
+segue a frente. Caso não seja identificada a inteção, o Movimento simples
+é tomado.
+
+No momento que a intação de ultrapassagem é identificada, é enviada uma mensagem
+pelo transponder em Broadcast para verificar se há um outro veículo em movimento
+no sentido oposto. Não havendo, a ultrapassagem segura é executada.
+
+No caso em que há um carro no sentido oposto, uma troca de mensagens é realizada
+via transponder e com base nesses dados, são executados cálculos com o intuito
+de verificar se existe a possibilidade de executar a ultrapassagem segura.
+Se essa existir, o sistema não transmite nenhum alerta e o motorista pode passar
+pelo outro carro. Caso o sistema identifique que não há, um alerta é transmitido
+ao condutor do veículo notificando que não é possível continuar com a intenção
+de ultrapassagem identificada.
+
+\subsection{Veículo no Sentido Contrário}
+
+O veículo que está nessa lane se comporta como receptor, sendo iniciado quando
+a partida é acionada pelo condutor. Este fica aguardando solicitações de
+comunicação de outros automóveis através do transponder.
+
+Quando as informações forem
+solicitados por qualquer veículo, um conjunto de dados é processado e enviado
+para o solicitante tambématravés do transponder.
+
 \section{Cenário Modelo}
 
 \subsection{Caso 1}
