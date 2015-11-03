@@ -9,23 +9,23 @@
 \begin{figure}[!htb]
   \centering
   \includegraphics[width=450px, scale=1]{figuras/catia2}
-  \caption{Visão da Caixa Protetora}
+  \caption{Visão do GPS}
 \end{figure}
 
 \begin{figure}[!htb]
   \centering
   \includegraphics[width=450px, scale=1]{figuras/catia3}
-  \caption{Visão da Caixa Protetora}
+  \caption{Visão do Micro Processador}
 \end{figure}
 
 \begin{figure}[!htb]
   \centering
   \includegraphics[width=450px, scale=1]{figuras/catia4}
-  \caption{Visão da Caixa Protetora}
+  \caption{Visão do Transponder}
 \end{figure}
 
 \begin{figure}[!htb]
   \centering
   \includegraphics[width=480px, scale=1]{figuras/catia5}
-  \caption{Visão da Caixa Protetora}
+  \caption{Visão das dimensões da Caixa Protetora}
 \end{figure}
