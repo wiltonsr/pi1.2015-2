@@ -12,65 +12,65 @@ serão feitos dois estudos de caso. São elas: MI48FD (Moura) e HI50GD
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=1]{figuras/especificacoes}
+\includegraphics[width=500px, scale=0.5]{figuras/especificacoes}
 \caption{Tabela de Especificações da Bateria Moura}
 \end{figure}
 
 Como pode-se observar na tabela, o modelo escolhido tem como característica as seguintes especificações:
 
-\begin{itemzie}
+\begin{itemize}
   \item Ampére Hora (AH): 48 AH
   \item Reserva Cap (min): 75 min
   \item Corrente de Partida a Frio: 550A
-\end{itemzie}
+\end{itemize}
 
 \subsection{Bateria HL50GD}
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=1]{figuras/especificacoes2}
+\includegraphics[width=500px, scale=0.5]{figuras/especificacoes2}
 \caption{Tabela de Especificações da Bateria Heliar}
 \end{figure}
 
 O modelo escolhido apresenta tais especificações:
 
-\begin{itemzie}
+\begin{itemize}
   \item Ampére Hora (AH): 50 AH
   \item Reserva Cap (min): 75 min
   \item Corrente de Partida a Frio: 400A
-\end{itemzie}
+\end{itemize}
 
 O parâmetro escolhido para o dimensionamento da bateria foi o Ampere Hora. Ampere Hora é a medida, conferida em laboratório, da capacidade de armazenamento elétrico que a bateria é capaz de proporcionar em descarga, nas partidas e na alimentação do sistema elétrico \cite{heliar}.
 
 \subsection{Gastos Energéticos de cada componente}
 
-\begin{itemzie}
+\begin{itemize}
   \item Câmera AWS650
 
   O sensor anticolisão AWS650 apresenta uma potência máxima de 3,2W e opera a 24v. Para que possa ser instalado será necessário um conversor de 12v para 24v, devido a bateria do carro ser de 12v. A partir do cálculo de potência, chega-se à conclusão que a corrente consumida é de 0,1333A.
-    Pot = U * i;
-    3,2W = 24v * i
+    Pot = U * i\\
+    3,2W = 24v * i\\
     i = 0,133A
 
   \item Lidar HDL-64E
 
   O sensor Lidar HDL-64E opera a 15v e 4ª. Sua instalação dependerá de um conversor de 12v para 15v pelo mesmo motivo da câmera. Sua potência é de:
-  	Pot = U*i
-  	Pot = 15v*4A
+  	Pot = U * i\\
+  	Pot = 15v * 4A\\
   	Pot = 60W
 
   \item Sensor de Rotação PST 360
 
   Esse sensor trabalha a 12v com uma corrente de 8,5mA. Na sua instalação não é necessário um conversor, já que, como a bateria, opera a 12v. Apresenta uma potência de:
-  	Pot = U*i
-  	Pot = 12v * 8,5mA
+  	Pot = U * i\\
+  	Pot = 12v * 8,5mA\\
   	Pot = 0,102W
 
   \item GPS
 
   A partir do data sheet a potência máxima do GPS é quando ele atua com 6v e 23mA, portanto, sua potência é de:
-    Pot = U*i
-    Pot = 6v * 23mA
+    Pot = U * i\\
+    Pot = 6v * 23mA\\
     Pot = 0,138W
 
   \item Radar
@@ -88,11 +88,11 @@ O parâmetro escolhido para o dimensionamento da bateria foi o Ampere Hora. Ampe
   \item Processador AM335x
 
   Sobre o ARM: ele funciona com 90mA no máximo, ou seja, se são 69 portas então são 1,3mA em uma porta GPIO. Opera a uma tensão de 3.3v. Para sua instalação também será necessário um conversor para 12v. Sua potência é de:
-  	Pot = U*i
-  	Pot = 3,3v * 90mA
+  	Pot = U * i\\
+  	Pot = 3,3v * 90mA\\
   	Pot = 0,3W
 
-\end{itemzie}
+\end{itemize}
 
 $ Consumo total = 3,2W + 60W + 0,102W + 0,138W + 7w + 0,08W + 10W +0,3 = 80,82W$
 
@@ -100,8 +100,8 @@ $ Consumo total = 3,2W + 60W + 0,102W + 0,138W + 7w + 0,08W + 10W +0,3 = 80,82W$
 
   Baseado nas características, apresentadas anteriormente, da bateria Moura e Heliar. E sendo o consumo total de 80,82W a corrente utilizada é de:
 
-  Pot = U*i
-	80,82W= 12v * i
+  Pot = U * i\\
+	80,82W= 12v * i\\
 	i = 6,735A
 
   \begin{itemize}
