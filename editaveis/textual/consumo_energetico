@@ -18,11 +18,11 @@ serão feitos dois estudos de caso. São elas: MI48FD (Moura) e HI50GD
 
 Como pode-se observar na tabela, o modelo escolhido tem como característica as seguintes especificações:
 
-\begin{itemzie}
+\begin{itemize}
   \item Ampére Hora (AH): 48 AH
   \item Reserva Cap (min): 75 min
   \item Corrente de Partida a Frio: 550A
-\end{itemzie}
+\end{itemize}
 
 \subsection{Bateria HL50GD}
 
@@ -34,17 +34,17 @@ Como pode-se observar na tabela, o modelo escolhido tem como característica as 
 
 O modelo escolhido apresenta tais especificações:
 
-\begin{itemzie}
+\begin{itemize}
   \item Ampére Hora (AH): 50 AH
   \item Reserva Cap (min): 75 min
   \item Corrente de Partida a Frio: 400A
-\end{itemzie}
+\end{itemize}
 
 O parâmetro escolhido para o dimensionamento da bateria foi o Ampere Hora. Ampere Hora é a medida, conferida em laboratório, da capacidade de armazenamento elétrico que a bateria é capaz de proporcionar em descarga, nas partidas e na alimentação do sistema elétrico \cite{heliar}.
 
 \subsection{Gastos Energéticos de cada componente}
 
-\begin{itemzie}
+\begin{itemize}
   \item Câmera AWS650
 
   O sensor anticolisão AWS650 apresenta uma potência máxima de 3,2W e opera a 24v. Para que possa ser instalado será necessário um conversor de 12v para 24v, devido a bateria do carro ser de 12v. A partir do cálculo de potência, chega-se à conclusão que a corrente consumida é de 0,1333A.
@@ -92,7 +92,7 @@ O parâmetro escolhido para o dimensionamento da bateria foi o Ampere Hora. Ampe
   	Pot = 3,3v * 90mA
   	Pot = 0,3W
 
-\end{itemzie}
+\end{itemize}
 
 $ Consumo total = 3,2W + 60W + 0,102W + 0,138W + 7w + 0,08W + 10W +0,3 = 80,82W$
 
