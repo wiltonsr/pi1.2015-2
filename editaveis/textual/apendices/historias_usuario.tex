@@ -1,0 +1,261 @@
+\chapter[Requisitos de Software]{Requisitos de Software}
+
+Como tema de investimento do nosso sistema tem-se: Redução dos acidentes em rodovias
+
+Épicos:
+
+\begin{itemize}
+  \item Mostrar dados:
+  \begin{itemize}
+    \item Interface humano computador
+    \item Informar o motorista sobre a ultrapassagem
+    \item Informar a localização dos carros em 3 km
+    \item Verificar se a ultrapassagem é possível
+    \item Verificar as distâncias
+  \end{itemize}
+
+  \item Enviar/transmitir/receber dados:
+  \begin{itemize}
+    \item Parser  (objetos coletados(JSON) )
+  \end{itemize}
+\end{itemize}
+
+\begin{table}[ht]
+\caption{User Store - 01}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{US-01} \\
+\hline
+Eu como usuário desejo obter informação visual para esclarecer a minha posição
+na rodovia. \\
+\hline
+\end{tabular}
+\label{table:us01}
+\end{table}
+
+\begin{table}[ht]
+\caption{Critérios de Aceitaração para User Store - 01}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{Critérios de Aceitação} \\
+\hline
+O display exibe um mapa com a localização do veículo.\\
+\hline
+O sistema deve mostrar a posição do carro na rodovia em que trafega. \\
+\hline
+\end{tabular}
+\label{table:cus01}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{User Store - 02}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{US-02} \\
+\hline
+Eu como motorista gostaria de ter minha posição identificada, para conseguir me
+orientar melhor para realizar uma ultrapassagem. \\
+\hline
+\end{tabular}
+\label{table:us01}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{Critérios de Aceitaração para User Store - 02}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{Critérios de Aceitação} \\
+\hline
+O sistema deve mostrar em um visor a posição do carro na rodovia, mostrando a faixa.\\
+\hline
+O sistema deve identificar em qual local da faixa o veículo está em tempo real.\\
+\hline
+\end{tabular}
+\label{table:cus01}
+\end{table}
+
+\begin{table}[ht]
+\caption{User Store - 03}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{US-03} \\
+\hline
+Eu como motorista, gostaria de saber a distância do carro que está na minha frente
+ \\
+\hline
+\end{tabular}
+\label{table:us03}
+\end{table}
+
+\begin{table}[ht]
+\caption{Critérios de Aceitaração para User Store - 03}
+\centering
+\begin{tabular}{| m {15cm} |}
+\hline
+\textbf{Critérios de Aceitação} \\
+\hline
+O sistema deve informar em seu visor a distância entre o usuário e o carro a sua frente\\
+\hline
+A distância deve ser calculada em tempo real. \\
+\hline
+Deve ser exibida de acordo com o Sistema internacional de medidas. (metros) \\
+\hline
+\end{tabular}
+\label{table:cus01}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{User Store - 04}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{US-04} \\
+\hline
+Eu como motorista gostaria de saber se é seguro trocar de faixa para ultrapassar. \\
+\hline
+\end{tabular}
+\label{table:us03}
+\end{table}
+
+\begin{table}[ht]
+\caption{Critérios de Aceitaração para User Store - 04}
+\centering
+\begin{tabular}{| m {15cm} |}
+\hline
+\textbf{Critérios de Aceitação} \\
+\hline
+O sistema deve informar em seu visor a distância entre o usuário e o carro a sua frente\\
+\hline
+Deve haver um local no visor mostrando se é seguro a troca de faixa \\
+\hline
+\end{tabular}
+\label{table:cus01}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{User Store - 05}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{US-05} \\
+\hline
+Eu como motorista gostaria de receber um sinal sonoro, quando não for possível ultrapassar, para evitar acidentes. \\
+\hline
+\end{tabular}
+\label{table:us03}
+\end{table}
+
+\begin{table}[ht]
+\caption{Critérios de Aceitaração para User Store - 05}
+\centering
+\begin{tabular}{| m {15cm} |}
+\hline
+\textbf{Critérios de Aceitação} \\
+\hline
+Deve haver um equipamento que emite som\\
+\hline
+O equipamento deve emitir o som assim quando haver perigo para ultrapassagem \\
+\hline
+O som deve ser emitido em bip  \\
+\hline
+O bip deve permanecer caso o condutor tente realizar a ultrapassagem insegura \\
+\hline
+\end{tabular}
+\label{table:cus01}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{User Store - 06}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{US-06} \\
+\hline
+Eu como motorista gostaria de saber quais os carros estão na pista, para eu poder tomar a decisão de ultrapassar. \\
+\hline
+\end{tabular}
+\label{table:us03}
+\end{table}
+
+\begin{table}[ht]
+\caption{Critérios de Aceitaração para User Store - 06}
+\centering
+\begin{tabular}{| m {15cm} |}
+\hline
+\textbf{Critérios de Aceitação} \\
+\hline
+Em um display, o sistema deve mostrar os carros que tem condições de influenciar na ultrapassagem\\
+\hline
+Cada carro deve ter a sua velocidade de acordo com o sistema internacional de medidas indicada no display.\\
+\hline
+O display exibe a distância entre os dois carros na mesma direção a frente do condutor\\
+\hline
+\end{tabular}
+\label{table:cus01}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{User Store - 07}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{US-07} \\
+\hline
+Eu como motorista gostaria de saber se há algum carro vindo na direção contrária para realizar a ultrapassagem. \\
+\hline
+\end{tabular}
+\label{table:us03}
+\end{table}
+
+\begin{table}[ht]
+\caption{Critérios de Aceitaração para User Store - 07}
+\centering
+\begin{tabular}{| m {15cm} |}
+\hline
+\textbf{Critérios de Aceitação} \\
+\hline
+O sistema deve disponibilizar um visor que mostrará o sentido que os carros em seu raio está indo \\
+\hline
+\end{tabular}
+\label{table:cus01}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{User Store - 08}
+\centering
+\begin{tabular}{|m {15cm} |}
+\hline
+\textbf{US-08} \\
+\hline
+Eu como motorista gostaria de saber quantos carros estão na direção contrária para realizar a ultrapassagem. \\
+\hline
+\end{tabular}
+\label{table:us03}
+\end{table}
+
+\begin{table}[ht]
+\caption{Critérios de Aceitaração para User Store - 08}
+\centering
+\begin{tabular}{| m {15cm} |}
+\hline
+\textbf{Critérios de Aceitação} \\
+\hline
+O sistema deve informar em seu visor a quantidade de carros que podem interferir na ultrapassagem e se encontram na direção contrária.\\
+\hline
+O sistema deve informar a distância entre os carros da direção contrária. \\
+\hline
+\end{tabular}
+\label{table:cus01}
+\end{table}
