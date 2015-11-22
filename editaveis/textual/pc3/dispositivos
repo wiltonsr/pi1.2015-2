@@ -1,0 +1,120 @@
+\chapter[Dispositivos]{Dispositivos}
+\begin{itemize}
+
+\item {GPS}
+
+O sistema GPS oferece aos usuários, informação exata, continua e tridimensional de posição e velocidade de maneira ilimitada, uma vez que os usuários atuam de forma passiva. Para determinar a posição do usuário, o sistema utiliza o conceito one-way time arrivel, TOA, que mede o tempo que o sinal transmitido por um emissor em um local conhecido, leva para chegar ao receptor, multiplica o de tempo pela velocidade de propagação do sinal e assim obtém a distância emissor-receptor [4].
+
+Tendo em vista que o sistema proposto com este projeto visa calcular e identificar quando há ou não a possibilidade de ultrapassagem, o sistema GPS é necessário para identificar a posição dos veículos quando há a intenção de ultrapassagem, já que, como citado anteriormente, em qualquer ponto da terra, pelo menos 4 satélites conseguem identificar a posição do usuário, além disso não há necessidade de intervisibilidade entre estações para seu funcionamento e ele opera sob quaisquer condições climáticas [5].
+
+O sistema receptor armazena o tempo medido e os valores de tempo registrados pelos satélites no momento do envio da onda portadora, com base nesse dado e na velocidade de propagação das ondas, que é conhecida, através da equação (1) se obtém a distância [8].
+
+$\Delta S = V * \Delta t$
+
+Onde:\\
+$\Delta S$ é a distância entre o satélite e o receptor.\\
+V é a velocidade de propagação da onda.\\
+$\Delta t$ é o tempo de envio da onda portadora.\\
+
+O GPS possui três segmentos, espacial, de controle e de usuário, a figura 03 ilustra a iteração dos segmentos.
+Dentro do CIAC, os módulos de GPS, indicaram a posição e a velocidade, tanto do carro que vai ultrapassar, quanto do carro a ser ultrapassado e do carro vindo em direção contrária.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=350px, scale=0.5]{figuras/dispositivo1}
+  \caption{Segmentos de GPS}
+\end{figure}
+
+\item Escolha
+
+Foi constatado que os GPS têm valores de restrição muito parecidos, além de estarem na mesma faixa de preço. Dessa forma o fator decisivo para a escolha do módulo foi a interface serial. Conforme as especificações do Transponder a ser utilizado no projeto, o módulo de GPS escolhido foi o ME-1000RW, que tem a mesma interface serial que o dispositivo. Como módulo secundário, foi escolhido o A2200-A, que tem fabricante e funcionamento diferente do primeiro módulo, para dar mais segurança e redundância ao projeto.
+
+\item Tela de Interface
+
+Interface é o nome dado a toda a porção de um sistema com a qual um usuário mantém contato ao utilizá-lo, tanto ativa quanto passivamente, engloba tanto software quanto hardware [19].
+Para atender às necessidades deste projeto, a interface deve fazer comunicação apenas do sistema para o usuário, de modo a deixar o sistema o mais autônomo possível.
+Por meio das pesquisas, foi constatado que as telas têm valores de restrição muito parecidos, além de estarem na mesma faixa de preço. Dessa forma, a tela escolhida foi a TFT054A, porque, além de ter um menor preço em relação a TFT052A, tem mais aplicabilidades em relação as duas outras telas citadas.
+
+\item Sensor de Rotação
+
+Para fins de projeto, foi necessário que se escolhesse alguns sensores o qual possibilitasse que o sistema de alerta anti-colisão identificasse quando o motorista apresenta intenção de ultrapassagem, para esse fim, foi escolhido um sensor de rotação o qual identifica a posição angular da direção do veículo, onde ao girar o volante no sentido da ultrapassagem, o sensor calcula a angulação de giro enviando esses dados para o microprocessador onde será processado todas as ações do sistema.
+O novo PST- 360 Piher apresenta uma tecnologia exclusiva sem contato que detecta a posição dos eixos mais de 360 graus com precisão até $\pm 0,5\%$. Este dispositivo pode ser programado com saída de escala completa durante ângulos menores. A saída é selecionável entre Analógica, PWM e SPI. Além disso, a tecnologia da Piher mantém a sua posição , mesmo depois de uma interrupção de energia.
+Um dos motivos pelo qual o sensor PST-360 foi escolhido é que o mesmo oferece o suporte de encaixe diretamente no eixo de direção do volante, permitindo assim, que não seja necessário existir nenhum suporte adicional na sua instalação. As especificações do mesmo podem ser encontradas nos apêndices.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=350px, scale=0.5]{figuras/pst}
+  \caption{Sensor de rotação PST-360}
+\end{figure}
+
+\item Câmera
+
+Para uma melhor análise das condições de tráfego veicular nas rodovias, com o intuito de projetar um sistema que emite alertas de colisão veicular, fez-se necessário o acréscimo de uma câmera a qual possibilitasse colher mais informações do tráfego dos veículos, assim como sua posição na pista, com objetivo de diminuir os erros de dados do sistema. Para isso foi escolhido uma câmera com base no sistema anti colisão  Toyota Safety Sense [23], cujo modelo é o AWS650 da 3M.
+	Dentro do Sistema, câmera atuará de forma a identificar a mudança de faixa, a velocidade do veículo da frente e mostrar as imagens da pista, tanto à noite, quanto durante o dia.
+
+\item Escolha
+
+	Com base nos itens anteriores e nos requisitos do projeto, foi escolhido a câmera AWS650, pois a mesma atende todos os requisitos do projeto na qual será utilizado todas as funções da câmera. Tal escolha foi baseada no sistema da Toyota Safety Sense, em que não foi escolhido por possuir excesso de funções que não vão ser úteis para o sistema, além de tais funções interferirem no funcionamento do veiculo, como o acionamento dos freios  por exemplo,  onde viola a restrição do projeto no qual diz que o sistema não pode interferir nas funções de funcionamento do veículo.
+O sistema AWS apenas tem a função de alertar a segurança ao condutor, cabendo a ele tomar as devidas ações necessárias para corrigir o veículo de forma a manter a segurança, aspecto esse, que atende ao requisito do projeto de não alterar as funções do veículo, apenas oferecer ao condutor a informação.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=350px, scale=0.5]{figuras/sensoraws650}
+  \caption{Dispositivo AWS650}
+\end{figure}
+
+\item LIDAR
+
+	O Lidar é uma tecnologia de detecção usado para medição de distâncias ou outras informações relevantes. No CIAC, o Lidar funcionará de forma a identificar a velocidade e a posição dos veículos envolvidos na ultrapassagem.
+
+	\begin{figure}[h]
+	  \centering
+	  \includegraphics[width=350px, scale=0.5]{figuras/funcionamento_lidar}
+	  \caption{Esquemático de funcionamento do Lidar}
+	\end{figure}
+
+\item Justificativa da Escolha
+
+	O Lidar será utilizado no CIAC para medição de diversas distâncias entre carros, sendo eles os que estão sendo ultrapassados ou os que estiverem na via oposta durante a ultrapassagem.
+	A detecção de luz e o mapeamento com o Lidar é um método preciso para medição de referências espaciais e distâncias de objetos, além de fazer uma varredura para obtenção dos dados não sendo um detector pontual. O Lidar servirá como um sensor para uma maior confiabilidade do sistema CIAC e permite a obtenção de dados a partir de ondas eletromagnéticas (o processo físico é extremamente rápido) fazendo com que a demora para obtenção da distância entre um carro e outro dependa em sua maior parte apenas do processamento desses dados. Uma grande precisão em um pequeno intervalo de tempo faz do Lidar uma boa opção na utilização do projeto. Todas as especificações podem ser encontradas no apêndice.
+
+\item Radar
+
+O radar é um dispositivo amplamente utilizado que possui grande confiabilidade. Várias empresas automotivas utilizam de radares para detecçao de distâncias e velocidades já que se pode ter uma medição precisa e as interferências causadas pelo ambiente ou por condições climáticas poderem, algumas vezes, ser contornados. O Radar funcionará de forma a identificar a posição e a velocidade dos veículos envolvidos na ultrapassagem.
+
+\item Laser para a câmera
+
+	Segundo Marco Aurélio [28], O raio laser é um tipo de radiação eletromagnética visível ao olho humano. A luz do laser além de ser monocromática, ou seja, constituída por radiações de uma única frequência, é muito potente em razão da grande concentração de energia em pequenas áreas (pequenos feixes). O feixe de laser é muito potente, podendo ter brilho superior ao da luz emitida por uma lâmpada.
+No sistema, o Laser irá ser acrescentado à câmera, de forma a adaptar a mesma para funcionar durante a noite.
+
+\item Justificativa da Escolha
+ Fez-se necessário a escolha de um laser a fim de auxiliar na adaptação da câmera usada no projeto, a AWS650, no qual irá auxiliá-la no funcionamento noturno. A AWS650 possui também funcionamento noturno, porém, com o incremento do laser, irá assim aumentar o raio de alcance da mesma.
+Segundo o Manual do usuário do Laser Nano Series [29], um sistema de feedback negativo garante que o raio laser ponha para fora exatamente a mesma quantidade de feixes de luz a partir do momento que o liga até o último segundo do poder da bateria.
+Dessa forma, o laser utilizado será o Nano Series da empresa Wicked Lasers, que possui um alcance de 141 metros, distância esta sendo mais que suficiente para a adaptação da câmera no funcionamento noturno, fazendo dessa forma com que haja melhoria no alcance de imagens em situações de escuridão acentuada onde apenas as configurações da câmera não funcionaria .
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=350px, scale=0.5]{figuras/laser_nano}
+  \caption{Laser Nano Series da Wicked Lasers}
+\end{figure}
+
+\item Microprocessador
+
+ARM é uma arquitetura de processadores que é largamente usado em sistemas embarcados por possuir instruções simplificadas e a filosofia de obtenção de máxima performance por ciclo e ter um baixo consumo. A linha de processadores ARM Cortex -A8 é uma linha de processadores que utilizam o conjunto de instruções ARMv7 e tem como objetivo o baixo consumo e a alta performance [30].
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=350px, scale=0.5]{figuras/arm}
+  \caption{Diagrama de um processador Arm}
+\end{figure}
+
+	Mas como o consórcio ARM não produz esse tipo de processador, utilizaremos a linha AM335x fabricado pela texas instrument. Essa linha é um System on a Chip (Sitema em um Chip ou SoC) onde em um chip possui todas as especificações de um sistema completo, com possibilidade de escrever um sistema operacional básico em suam memória flash [31].
+	Além de tudo o processador AM335x possui blocos de tratamento próprio para imagem, para display e principalmente 69 saídas do tipo GPIO (General Propouse Input e Output ou Saídas e entradas de propósito geral) sendo 10 dessas saídas analógicas. Ele tem clock interno de 1Ghz e memória interna de 512 MiB [32].
+
+	\begin{figure}[h]
+	  \centering
+	  \includegraphics[width=350px, scale=0.5]{figuras/am35}
+	  \caption{Segmentos de GPS}
+	\end{figure}
+
+\end{itemize}
