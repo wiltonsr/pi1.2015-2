@@ -57,6 +57,46 @@ Essa seção fornece uma visão geral do modelo de implementação e da organiza
   \end{figure}
 
 \end{enumerate}
+\end{enumerate}
+  \begin{enumerate}
+  \item Transponder:
+
+  \item  \textbf{Transponder}: Classe que faz conexão com o transponder, para enviar e receber dados dos dispositivos de outros veículos.
+
+\item  \textbf{Interface de software:}
+
+ConnectComponents: Classe abstrata presente na camada de interface de software responsável por abrir ou fechar conexão com os componentes eletrônicos.
+
+InputData: Classe abstrata para fazer a requisição ou recepção dos dados enviados pelos componentes.
+
+Gps: Classe que realiza conexão com o gps e faz a requisição da posição caso, este não esteja mandando as informações constantemente.
+
+RotationSensor: Classe para realizar conexão com o sensor de rotação e enviar a posição do volante quando requisitado.
+
+Camera: Classe que conecta com o software de interface da câmera e envia as informações processadas pelo seu próprio controlador.
+
+Lidar: Classe que conecta-se com o lidar para receber informações vindas do componente eletrônico.
+
+Radar: Classe que conecta-se com o radar para processar as informações vindas do componente
+
+JsonResponse: Classe que recebe as informações das classes de conexão com os dispositivos eletrônicos e transforma em objetos do software para serem usados pelas classes da camada controllers.
+
+\item   \textbf{Controllers:}
+
+Controller: Principal classe do sistema que irá gerenciar a comunicação com as classes que fazem comunicação com outros componentes. Processar os resultados dos cálculos realizados para indicar se favorecem a ultrapassagem com segurança.
+
+Calculation: Classe responsável por implementar os algoritmos matemáticos otimizados para o cálculo da distância entre veículos, a velocidade ideal, o tempo necessário e a distância segura para realizar a ultrapassagem.
+
+
+\item   \textbf{Gerenciador de dispositivo de saída:}
+
+InterfaceUser: Classe abstrata que recebe as informações processadas pela camada controller e converte para dados a serem enviados para os dispositivos de comunicação com o usuário.
+
+Display: Classe que se conecta com o display para o usuário e envia as informações a serem exibidas na tela, ou faz a atualização delas.
+
+TeamSpeaker: Classe que conecta com o dispositivo de saída auto falante e controla a as informações sonoras a serem emitidas.
+
+
 
 
 \end{enumerate}
