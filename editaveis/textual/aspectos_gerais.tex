@@ -1,4 +1,4 @@
-\chapter{Aspectos Gerais do Funcionamento do Sistema}
+\section{Aspectos Gerais do Funcionamento do Sistema}
 
 Tendo em vista que o sistema a ser projetado é um sistema crítico, deve-se escolher os dispositivos de forma que haja redundância, ou seja, em caso de falha de algum dispositivo, existe outro que poderá coletar as mesmas informações. Para fazer a comunicação interveicular, foi escolhido o Transponder, para identificar a intenção de ultrapassagem, será usado como parâmetro as informações do sensor de movimento angular, da câmera e a ativação da seta, sendo este último um fator que pode ocorrer ou não. Para verificar a viabilidade de ultrapassagem, será utilizado o GPS, o Radar e o Lidar.
 
@@ -62,9 +62,9 @@ Portanto, baseado no diagrama de funcionamento do CIAC com esquemático de conex
 
 O diagrama abaixo, representa o fluxograma básico que demonstra o funcionamento do pseudo algoritmo do software, assim como as principais funções presentes. Assume-se que há uma interface de comunicação já implementada que realiza a comunicação com o componente eletrônico e envia as informações para o software já no formato dos tipos de dados primitivos a serem utilizados: Integer, Double, String, Boolean.
 
-\begin{figure}[!h]
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=300px, scale=1]{figuras/func_soft}
+  \includegraphics[width=200px, scale=1, angle=90]{figuras/func_soft}
   \caption{Fluxograma de funcionamento geral do Software}
 \label{fig:func_soft}
 \end{figure}
@@ -101,151 +101,16 @@ Estas Heurísticas foram utilizadas para a construção do protótipo de baixís
 
 Para realização das perguntas para avaliação do protótipo desenvolvido, utilizou-se o modelo da carta de consentimento presente nos apêndices no qual, serve para atestar que o participante está ciente do tipo de pesquisa a ser realizada e permite a utilização de suas respostas como índices para avaliação do protótipo do produto.
 
-Assim, definidas as heurística e metodologia de produção do protótipo, fez-se o protótipo de baixa fidelidade
-Protótipo de papel
+Assim, com base nas respostas dos usuários, que podem ser consultadas nos apêndices, foi elaborado o protótipo final de alta fidelidade para a interface de comunicação direta com o usuário.
 
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/prototipo1}
-  \caption{Protótipo de Papel 1}
-\label{fig:prototipo1}
-\end{figure}
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/prototipo2}
-  \caption{Protótipo de Papel 2}
-\label{fig:prototipo2}
-\end{figure}
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/prototipo3}
-  \caption{Protótipo de Papel 3}
-\label{fig:prototipo3}
-\end{figure}
-
-Para maior proveito da avaliação, é desejável uma análise dos usuários avaliadores para adaptar a interface às suas vontades e desejos e construir um produto com alta possibilidades de sucesso. Para isto foram realizadas um grupo de perguntas para motoristas que apresentaram interesse no projeto. Abaixo seguem os resultados dos motoristas interessados no produto:
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result1}
-  \caption{Resultados da pergunta 1}
-\label{fig:result1}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result2}
-  \caption{Resultados da pergunta 2}
-\label{fig:result2}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result3}
-  \caption{Resultados da pergunta 3}
-\label{fig:result3}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result4}
-  \caption{Resultados da pergunta 4}
-\label{fig:result4}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result5}
-  \caption{Resultados da pergunta 5}
-\label{fig:result5}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result6}
-  \caption{Resultados da pergunta 6}
-\label{fig:result6}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result7}
-  \caption{Resultados da pergunta 7}
-\label{fig:result7}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result8}
-  \caption{Resultados da pergunta 8}
-\label{fig:result8}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result9}
-  \caption{Resultados da pergunta 9}
-\label{fig:result9}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result10}
-  \caption{Resultados da pergunta 10}
-\label{fig:result10}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result11}
-  \caption{Resultados da pergunta 11}
-\label{fig:result11}
-\end{figure}
-
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/result12}
-  \caption{Resultados da pergunta 12}
-\label{fig:result12}
-\end{figure}
-	 	 	 	
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/quadro1}
-  \caption{Resultados da pergunta 13}
-\label{fig:quadro1}
-\end{figure}			
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=300px, scale=1]{figuras/quadro2}
-  \caption{Resultados da pergunta 14}
-\label{fig:quadro2}
-\end{figure}	
-
-Assim, com base nas respostas dos usuários, foi elaborado o protótipo final de alta fidelidade para a interface de comunicação direta com o usuário.
-
-\begin{figure}[!h]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=400px, scale=1]{figuras/alta1}
   \caption{Protótipo de alta fidelidade 1}
 \label{fig:alta1}
 \end{figure}	
 
-\begin{figure}[!h]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=400px, scale=1]{figuras/alta2}
   \caption{Protótipo de alta fidelidade 2}
