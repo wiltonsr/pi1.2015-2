@@ -1,0 +1,108 @@
+\chapter{Especificação de Caso de Uso: Verificar se a ultrapassagem é segura}
+
+Descrição: 
+	Neste caso de uso é descrito como o sistema CIAC se comporta no momento em que o motorista indica que vai ultrapassar. 
+
+Ator: 
+Motorista
+
+Pré-condições: 
+	O Sistema CIAC deve estar em funcionamento em todos os veículos envolvidos.
+
+Fluxo Principal:
+	O Caso de uso se inicia quando o motorista indica que quer ultrapassar. 
+
+O motorista indica que quer ultrapassar. [RN01]
+O sistema verifica se há alguma condição que impede a realização da ultrapassagem. [RN02] [FA01]
+O sistema verifica se há mais de um veículo que deseja ultrapassar.[FA03]
+O sistema verifica se há algum veículo no sentido oposto. [FA02]
+O sistema calcula se há espaço suficiente para poder fazer uma ultrapassagem segura. [RN03] [FA01]
+O motorista efetua a ultrapassagem.
+O sistema continua verificando se há alguma condição que pode tornar a ultrapassagem insegura até a conclusão da mesma. [RN02] [FA01] 
+O caso de uso é encerrado.
+
+Fluxos Alternativos: 
+FA01. Ultrapassagem insegura
+Esse fluxo alternativo é sempre executado quando é identificado que não é seguro ultrapassar.
+O sistema dá o aviso de que não é possível efetuar a ultrapassagem de forma segura.
+O sistema para o aviso quando o veículo estiver na faixa da direita e não estiver indicando que deseja ultrapassar. [RN01]
+O caso de uso é encerrado.
+
+
+	FA02. Ultrapassagem segura (por falta de veículo no sentido oposto)
+	Esse fluxo alternativo é executado quando no passo 3 do fluxo principal não é encontrado algum veículo no sentido oposto.
+O motorista efetua a ultrapassagem.
+O sistema continua verificando se há alguma condição que pode tornar a ultrapassagem insegura até a conclusão da mesma. [RN02] [FA01] 
+O caso de uso é encerrado.
+
+	FA03. Ultrapassando mais de um veículo
+		Esse fluxo alternativo é executado quando é verificado a presença de mais de um veículo a ser ultrapassado no mesmo sentido.
+O sistema se comunica com o primeiro veículo à frente e obtemobtém a distância total da fileira de veículos.  
+O sistema verifica se há algum veículo no sentido oposto. [FA02]
+O sistema calcula se há espaço suficiente para poder fazer uma ultrapassagem segura. Tendo em vista o tamanho da fileira de veículos que se encontra à frente ao veículo. [RN03][FA01]
+O motorista efetua a ultrapassagem.
+O sistema continua verificando se há alguma condição que pode tornar a ultrapassagem insegura até a conclusão da mesma. [RN02] [FA01] 
+O caso de uso é encerrado.
+
+Regras de negócio:
+	RN01:	 É verificada a intenção de ultrapassar nas seguintes circunstâncias:
+           -  Acionamento da seta;
+- Mudança na angulação do volante, utilizando o sensor de rotação PST-360;
+- Mudança de faixa, utilizando a câmera AWS650;
+- Quando a distância entre o veículo C2 e o veículo C1 diminuir, utilizando a   câmera AWS650, o Lidar HDL-64E e o Radar ARS-30X.
+
+RN02: É verificado que não é possível efetuar a ultrapassagem nas seguintes condições de acordo com o código de trânsito brasileiro:
+Quando o veículo que deseja ultrapassar estiver em aclive.
+Quando o veículo que deseja ultrapassar estiver em uma curva.
+Quando o veículo que deseja ultrapassar estiver sendo ultrapassado por outro veículo.
+	
+	RN03: É verificado se é possível ultrapassar caso a distância necessária para a ultrapassagem seja menor que a distância disponível para ultrapassagem, sendo representada pela expressão lógica:
+
+Em que:
+$\delta S$ é a distância necessária para ultrapassagem;
+S é a distância disponível para ultrapassagem.
+Considerações da expressão lógica:
+É adicionado 20% na distância necessária para ultrapassagem para ter um fator de segurança envolvido.
+
+Variáveis de entrada:
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=250px, scale=1]{figuras/imgcar}
+\caption{STotal}
+\label{fig:imgcar}
+\end{figure}
+
+V1, velocidade do veículo que deseja ultrapassar, obtido pelo GPS;
+V2, velocidade do veículo que se pretende ultrapassar, obtido pelo GPS;
+V3, velocidade do veículo que vem em sentido oposto, obtido pelo GPS;
+D, comprimento do veículo ou fileira de veículos que se deseja ultrapassar, obtido atraves de uma comunicação com o veiculo da frente via transponder;
+Stotal, distância entre o veículo que deseja ultrapassar e o veículo que vem em sentido oposto, obtido atraves do GPS.
+
+Fórmulas:
+O tempo de ultrapassagem é definido por:
+
+Em que:
+$\delta t$ é o tempo de ultrapassagem, dado em horas;
+D é o comprimento do veículo ou fileira de veículos que se deseja ultrapassar, dado em quilômetro;
+V1 é a velocidade do veículo que deseja ultrapassar, dado em Km/h;
+V2 é a velocidade do veículo que se pretende ultrapassar, dado em Km/h.
+
+Considerações dessa fórmula:
+A soma de 0.01 Km (o que é equivalente a 10m) no comprimento do veículo ocorre, pois é necessário uma distância mínima entre os veículo de 5 metros, sendo assim é necessário 5 metros antes e 5 metros depois. 
+	
+A distância necessária para ultrapassagem é definida por:\\
+$\delta S = \delta t * V1$\\
+Em que:
+$\delta S$ é a distância necessária para ultrapassagem, dado em quilômetros;
+$\delta t$ é o tempo de ultrapassagem, dado em horas;
+V1 é a velocidade do veículo que deseja ultrapassar.
+
+A distância disponível para ultrapassagem é definida por:\\
+$S = Stotal - V3 * \delta t$\\
+
+Em que:
+S é a distância disponível para ultrapassagem, dado em quilômetros;
+Stotal é a distância total para ultrapassagem, dado em quilômetros;
+V3 é a velocidade do veículo que está em sentido oposto;
+$\delta t$ é o tempo de ultrapassagem, dado em horas.
