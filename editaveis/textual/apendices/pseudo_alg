@@ -1,0 +1,193 @@
+\chapter{PSEUDO Algoritmo do software}
+
+A seguir, a implementação do pseudo algoritmo
+
+\# Determina se o carro está ligado
+CARROLIGADO : booleano
+
+\# Distância minima para realizar ultrapassagem
+DISTANCIAMINIMA = 770 : real
+
+\# Constante que indica que ultrapssagem é segura ou não
+PERIGO = falso : booleano
+SEGURO = verdadeiro : booleano
+
+\# Constantes de intencao de ultrapassar
+LIGADO = verdadeiro : booleano
+
+\# Constante para indentificar a presenca de veículos vindo
+\# na direção oposta caso for ultrapassar
+SEMVEICULOS = -1 : real
+COMVEICULOS = 1 : real
+
+\# Mantem a distância de veiculos da direção oposta
+distancias : real vetor
+
+\# Recebe a intenção de ultrapassar do motorista
+intensaoUltrapassar : booleano
+
+\# Determina fim da ultrapassagem
+resultadoUltrapassagem : booleano
+
+\# Determina distâncias para Lidar e Radar
+distanciaLidar : real
+distanciaRadar : real
+
+\# Funcao que controla o sistema de processar informações e
+\# reponder as requisições do transponder
+funcao carroLigado()
+
+	CARROLIGADO <- informacoesVeiculo()
+	enquanto CARROLIGADO = verdadeiro faca
+
+		\# Funcoes que devem funcionar paralelamente	
+		processaInformacoes()
+		recebeSinalTransponder()
+		
+	fimenquanto
+
+	\# Função que limpa condição de variáveis e desativa sistema
+	desligaCIAC();
+	
+fimfuncao
+
+\# Faz o controle sobre todas as informações recebidas do carro
+funcao processaInformacoes()
+
+	intencaoUltrapassar <- recebeIntencao()
+	se intencaoUltrapassar = verdadeiro entao
+	
+		resultadoUltrapassagem <- processaUltrapassagem()
+		alerta( resultadoUltrapassagem )
+	
+	fimse
+	
+fimfuncao
+
+\# Processa ultrapassagem verificando se a distância
+\# para ultrapassagem é válida
+funcao processaUltrapassagem()
+
+	\# sinalTransponder função que retorna se houve alguma responda
+	\# da requisição do transponder
+	se sinalTransponder() = verdadeiro entao
+	
+		enquanto acabouUltrapassagem() != verdadeiro faca
+		
+			\# calculaDistanciaVeiculos função que realiza calculo da
+			\# distâncias em relação a outros veículos recebidos com
+			\# transponder
+			distancias <- calculaDistanciaVeiculos()
+			para cada distancia em distancias faca
+				se distancia <= DISTANCIAMINIMA entao
+					retorna PERIGO
+				\# Calcula Tempo é função que determina o tempo que
+				\# ultrapassagem irá demorar para terminar
+				\# Enquanto que tempoMinimo é o tempo mínimo necessário
+				\# para que a ultrapassagem seja realizada com segurança
+				senao se calculaTempo(distancia) <= 									  tempoMinimo(distancia) então
+					retorna PERIGO
+				fimse
+			fimpara
+			
+		fimenquanto
+		
+	senao se radarLidar() = LIGADO entao
+		alerta ( PERIGO )
+	senao		
+		alerta ( SEGURO )
+	fimse
+	
+	returna SEGURO
+fimfuncao
+
+\# Funcao que processa o recebimento dos dados dos sensores
+\# para determinar intencao de ultrapassagem
+funcao recebeIntencao()
+	
+	se sinalSeta() = LIGADO ou cameraSinal() = LIGADO ou
+	 	 sensorRotacao() = LIGADO entao
+
+		retorna verdadeiro	
+	senao
+		retorna falso
+	fimse
+
+fimfuncao
+
+\# Recebe a leitura da camera para verificar se o veiculo voltou
+\# para a faixa de origem
+funcao acabouUltrapassagem()
+
+	voltouFaixa <- cameraLeituraFaixa()
+	se voltouFaixa = DIREITA entao	
+		retorna verdadeiro
+	senao
+	 	retorna falso
+ 	fimse
+ 
+fimfuncao
+
+\# Emite o alerta sonoro e visual aos dispositivos de saída
+funcao alerta( condicao : booleano )
+
+	se condicao = SEGURO entao
+		interfaceAtualizaDisplay( "Seguranca", informacoes() )
+	senao se condicao = PERIGO entao
+	  interfaceEmiteBip( condicao )
+		interfaceAtualizaDisplay ( "Perigo!", informacoes() )
+	senao
+		interfaceAtualizaDisplay ( "Perigo! Ouve alguma falha, procure assistência"+	
+					       " técnica urgente!!" )
+	fimse
+
+fimfuncao
+
+\# Verifica a todo instante se há veículos a frente
+\# que impossibilitam a ultrapassagem
+funcao radarLidar()
+	
+	\# funções que retornam a o processamento dos dados dos sensores
+	distanciaRadar <- radarCalculaDistancia()
+	distanciaLidar <- lidarCalculaDistancia()
+	
+	se distanciaRadar = SEMVEICULOS ou distancaiLidar = SEMVEICULOS entao
+		retorna SEMVEICULOS
+	senao
+		retorna COMVEICULOS
+	fimse
+	
+fimfuncao
+
+\# Contem informacoes do veiculo do GPS do tipo Veiculo  que
+\# tem posicao e velocidade do próprio veículo
+informacoesVeiculo : Veiculo
+
+\# Contem informacoes do resultado do transponder
+informacoesOutrosVeiculos : Veiculo vetor
+funcao informacoes() : vetor
+	
+	informacoesVeiculo <- gpsInformacoes()
+	informacoesOutrosVeiculos <- transponderVeiculosIdentificados()
+	distanciaRadar <- radarCalculaDistancia()
+	distanciaLidar <- lidarCalculaDistancia()
+	voltouFaixa <- cameraLeituraFaixa()
+
+	\# retorna um vetor com todas as informacoes para a interface
+	retorna [informacoesVeiculo, informacoesOutrosVeiculos,
+					distanciaRadar, distanciaLidar, voltouFaixa]
+					
+fimfuncao
+
+\# Funcao que recebe sinal de pedido do transponder de outro veículo
+\# pedindo informações sobre posição e velocidade
+funcao recebeSinalTransponder()
+	
+	se transponderRecebeSinal() = LIGADO entao
+		
+		informacoesVeiculo <- gpsInformacoes()
+		respondeInformacoesVeiculo( informaceosVeiculo )
+		
+	fimse
+
+fimfuncao
